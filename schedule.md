@@ -13,9 +13,9 @@ Tuesday
 
 Time     | Phil   | Boshika
 :--      | :--    | :-- 
-10-10:40 | Justin | Michelle
-11-11:40 | Kora   | Qian
-12-12:40 | Ritwik | Tim
+9-9:40   | Justin | Michelle
+10-10:40 | Kora   | Qian
+11-11:40 | Ritwik | Tim
 
 Wednesday
 
@@ -30,9 +30,9 @@ Thursday
 
 Time     | Adam     | Phil
 :--      | :--      | :-- 
-10-10:40 | Justin   | Michelle
-11-11:40 | Kora     | Qian
-12-12:40 | Ritwik   | Tim
+9-9:40   | Justin   | Michelle
+10-10:40 | Kora     | Qian
+11-11:40 | Ritwik   | Tim
 
 Friday
 
