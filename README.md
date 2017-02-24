@@ -57,7 +57,7 @@ Your app should:
 * **Design first.** Planning with user stories & wireframes before writing code means you won't get distracted changing your mind – you'll know what to build, and you can spend your time wisely by just building it.
 * **Decide on your base technology stack**.  Options include:
   * Single-page Apps (SPAs)
-    * **MEAN Stack**: Use Node, Express, MongoDB and AngularJS.
+    * **MEA/RN Stack**: Use Node, Express, MongoDB, AngularJS or React
     * **RAP Stack**:  If you enjoyed the conventions of Rails and are struggling with the Wild Wild West factor of Node/Express/MongoDB, consider using Rails and Postgres instead.
   * Traditional Roundtrip Apps
     * Use Node/Express/MongoDB with ejs server-side templates
