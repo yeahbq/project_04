@@ -2,6 +2,27 @@
   image-rendering: pixelated;
 }
 
+#nicknames {
+  text-align: center;
+}
+#submitBtn {
+  background: url("../login.png");
+  position: absolute;
+  bottom: 10%;
+  height: 90px;
+  width: 400px;
+  border: none;
+  left: 40%;
+  list-style-type: none;
+}
+
+#login-btn {
+  position: absolute;
+  bottom: 10%;
+  width: 25%;
+  left: 37%;
+}
+
 #header {
   text-align: center;
 }
@@ -16,7 +37,7 @@
 #mid {
   position: absolute;
   display: inline-block;
-  left: 40%;
+  left: 47%;
   top: 15%;
 }
 

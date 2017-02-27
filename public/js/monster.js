@@ -2,18 +2,12 @@ console.log('hello')
 
 let teddy = document.querySelector('.monzaemon-walk');
 let monster = document.querySelector('#monster');
-let loginBtn = document.querySelector('#login-btn');
 
-function handleClick (evt) {
-  console.log('clicked')
-};
-
-
-teddy.addEventListener('click', function(evt) {
-  console.log('clicked')
-  this.classList.toggle('monzaemon-walk')
-  this.classList.toggle('monzaemon-happy');
-})
+// teddy.addEventListener('click', function(evt) {
+//   console.log('clicked')
+//   this.classList.toggle('monzaemon-walk')
+//   this.classList.toggle('monzaemon-happy');
+// })
 
 let defaultMonster = (element) => {
   element.style.height = "16px";
@@ -27,26 +21,27 @@ let defaultMonster = (element) => {
 let babyWalk = (element) => {
   loopWalk();
   defaultMonster(element);
-  element.style.background = "url(../sprites.png) 0px 0px";
+  element.style.background = "url(../digimon-sprites.png) 0px 0px";
   element.style.animation = `babyWalk 3s steps(3) infinite`
 }
 
 let loopWalk = () => {
   setInterval(()=>{
     monster.classList.toggle('flipped')
+    // teddy.classList.toggle('flipped')
   }, 3000)
 }
 
 let babySleep = (element) => {
   clearInterval();
-  element.style.background = "url(../sprites.png) 0px -60px";
+  element.style.background = "url(../digimon-sprites.png) 0px -60px";
   element.style.animation = `babySleep 3s steps(2) infinite`
 }
 
 let babyNo = (element) => {
   clearInterval(loopWalk);
   let counter = 0;
-  element.style.background = "url(../sprites.png) 0px -100px";
+  element.style.background = "url(../digimon-sprites.png) 0px -100px";
   element.style.animation = `babyNo`
   let flipped = setInterval(()=>{
     monster.classList.toggle('flipped')
