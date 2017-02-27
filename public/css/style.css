@@ -10,7 +10,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px 0px;
+  background: url(../digimon-sprites.png) 0px 0px;
   image-rendering: pixelated;
   animation: babyWalk 3s steps(3) infinite;
 }
@@ -23,7 +23,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -60px;
+  background: url(../digimon-sprites.png) 0px -60px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -36,7 +36,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -100px;
+  background: url(../digimon-sprites.png) 0px -100px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -49,7 +49,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -120px;
+  background: url(../digimon-sprites.png) 0px -120px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -62,7 +62,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -160px;
+  background: url(../digimon-sprites.png) 0px -160px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -75,7 +75,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -200px;
+  background: url(../digimon-sprites.png) 0px -200px;
 /*  transform: scalex(-1) flips image;
 */  image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
@@ -89,7 +89,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -240px;
+  background: url(../digimon-sprites.png) 0px -240px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -102,7 +102,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) 0px -280px;
+  background: url(../digimon-sprites.png) 0px -280px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -115,7 +115,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px 0px;
+  background: url(../digimon-sprites.png) -20px 0px;
   image-rendering: pixelated;
   animation: play 3s steps(3) infinite;
 }
@@ -128,7 +128,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -60px;
+  background: url(../digimon-sprites.png) -20px -60px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -141,7 +141,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -100px;
+  background: url(../digimon-sprites.png) -20px -100px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -154,7 +154,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -120px;
+  background: url(../digimon-sprites.png) -20px -120px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -167,7 +167,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -160px;
+  background: url(../digimon-sprites.png) -20px -160px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -180,7 +180,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -200px;
+  background: url(../digimon-sprites.png) -20px -200px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -193,7 +193,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -240px;
+  background: url(../digimon-sprites.png) -20px -240px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -206,7 +206,7 @@
 .monster {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -20px -280px;
+  background: url(../digimon-sprites.png) -20px -280px;
   image-rendering: pixelated;
   animation: play 3s steps(2) infinite;
 }
@@ -219,7 +219,7 @@
 .monster, .monzaemon-walk {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px 0px;
+  background: url(../digimon-sprites.png) -260px 0px;
   image-rendering: pixelated;
   animation: monzaemonWalk 3s steps(3) infinite alternate-reverse;
   zoom:5;
@@ -233,7 +233,7 @@
 .monster, .monzaemon-sleep {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -60px;
+  background: url(../digimon-sprites.png) -260px -60px;
   image-rendering: pixelated;
   animation: monzaemonSleep 3s steps(2) infinite;
   zoom: 5;
@@ -247,7 +247,7 @@
 .monster, .monzaemon-no {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -100px;
+  background: url(../digimon-sprites.png) -260px -100px;
   image-rendering: pixelated;
   animation: monzaemonNo 3s steps(2) infinite;
   zoom: 5;
@@ -262,7 +262,7 @@
 .monster, .monzaemon-happy {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -120px;
+  background: url(../digimon-sprites.png) -260px -120px;
   image-rendering: pixelated;
   animation: monzaemonHappy 3s steps(2) infinite;
   zoom: 5;
@@ -277,7 +277,7 @@
 .monster, .monzaemon-mad {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -160px;
+  background: url(../digimon-sprites.png) -260px -160px;
   image-rendering: pixelated;
   animation: monzaemonMad 3s steps(2) infinite;
   zoom: 5;
@@ -292,7 +292,7 @@
 .monster, .monzaemon-battle-left {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -200px;
+  background: url(../digimon-sprites.png) -260px -200px;
   image-rendering: pixelated;
   animation: monzaemonBattleleft 3s steps(2) infinite;
   zoom: 5;
@@ -307,7 +307,7 @@
 .monster, .monzaemon-battle-mid {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -240px;
+  background: url(../digimon-sprites.png) -260px -240px;
   image-rendering: pixelated;
   animation: monzaemonBattleMid 3s steps(2) infinite;
   zoom: 5;
@@ -322,7 +322,7 @@
 .monzaemon-injured {
   width: 16px;
   height: 16px;
-  background: url(../sprites.png) -260px -280px;
+  background: url(../digimon-sprites.png) -260px -280px;
   image-rendering: pixelated;
   animation: monzaemonInjured 3s steps(2) infinite;
   zoom: 5;
