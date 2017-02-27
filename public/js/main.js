@@ -28,6 +28,7 @@ let babyWalk = (element) => {
 let loopWalk = () => {
   setInterval(()=>{
     monster.classList.toggle('flipped')
+    teddy.classList.toggle('flipped')
   }, 3000)
 }
 

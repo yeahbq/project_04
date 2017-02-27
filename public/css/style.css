@@ -2,17 +2,27 @@
   image-rendering: pixelated;
 }
 
+#right {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  display: inline-block;
+  top: 15%;
+}
+
 .flipped {
   transform: scaleX(-1)
 }
 
 /*baby walk*/
-.monster {
+.monster, .baby-walk {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px 0px;
   image-rendering: pixelated;
   animation: babyWalk 3s steps(3) infinite;
+  zoom: 5;
+
 }
 
 @keyframes babyWalk {
@@ -20,12 +30,14 @@
 }
 
 /*baby sleep*/
-.monster {
+.monster, .baby-sleep {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -60px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babySleep 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
 @keyframes babySleep {
@@ -33,12 +45,14 @@
 }
 
 /*baby no needs to flip image*/
-.monster {
+.monster, .baby-no {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -100px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babyNo 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
 @keyframes babyNo {
@@ -46,172 +60,196 @@
 }
 
 /*baby happy*/
-.monster {
+.monster , .baby-happy{
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -120px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babyHappy 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes babyHappy {
   100%{ background-position: 0px -160px; }
 }
 
 /*baby mad*/
-.monster {
+.monster, .baby-mad {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -160px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babyMad 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes babyMad {
   100%{ background-position: 0px -200px; }
 }
 
 /*baby battle left*/
-.monster {
+.monster, .baby-battle{
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -200px;
 /*  transform: scalex(-1) flips image;
 */  image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babyBattle 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes babyBattle {
   100%{ background-position: 0px -240px; }
 }
 
 /*baby battle middle*/
-.monster {
+.monster, .baby-eat {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -240px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babyEat 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes babyEat {
   100%{ background-position: 0px -280px; }
 }
 
 /*baby injured*/
-.monster {
+.monster, .baby-injured {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) 0px -280px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: babyInjured 3s steps(2) infinite;
+  zoom: 5;
 }
 
-@keyframes play {
+@keyframes babyInjured {
   100%{ background-position: 0px -320px; }
 }
 
 /*junior walk*/
-.monster {
+.monster, .junior-walk {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px 0px;
   image-rendering: pixelated;
-  animation: play 3s steps(3) infinite;
+  animation: juniorWalk 3s steps(3) infinite;
+  zoom: 5;
 }
 
-@keyframes play {
+@keyframes juniorWalk {
   100%{ background-position: -20px -60px; }
 }
 
 /*junior sleep*/
-.monster {
+.monster, .junior-sleep {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -60px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorSleep 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorSleep {
   100%{ background-position: -20px -100px; }
 }
 
 /*junior no*/
-.monster {
+.monster, .junior-no{
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -100px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorNo 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorNo {
   100%{ background-position: -20px -100px; }
 }
 
 /*junior happy*/
-.monster {
+.monster, .junior-happy {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -120px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorHappy 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorHappy {
   100%{ background-position: -20px -160px; }
 }
 
 /*junior mad*/
-.monster {
+.monster, .junior-mad {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -160px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorMad 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorMad {
   100%{ background-position: -20px -200px; }
 }
 
 /*junior battle left*/
-.monster {
+.monster, .junior-battle {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -200px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorBattle 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorBattle {
   100%{ background-position: -20px -240px; }
 }
 
 /*junior battle middle*/
-.monster {
+.monster, .junior-eat{
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -240px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorEat 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorEat {
   100%{ background-position: -20px -280px; }
 }
 
 /*junior injured*/
-.monster {
+.monster, .junior-injured{
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -20px -280px;
   image-rendering: pixelated;
-  animation: play 3s steps(2) infinite;
+  animation: juniorInjured 3s steps(2) infinite;
+  zoom: 5;
+
 }
 
-@keyframes play {
+@keyframes juniorInjured {
   100%{ background-position: -20px -320px; }
 }
 
@@ -289,17 +327,17 @@
 }
 
 /*monzaemon battle left*/
-.monster, .monzaemon-battle-left {
+.monster, .monzaemon-battle {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -260px -200px;
   image-rendering: pixelated;
-  animation: monzaemonBattleleft 3s steps(2) infinite;
+  animation: monzaemonBattle 3s steps(2) infinite;
   zoom: 5;
 
 }
 
-@keyframes monzaemonBattleleft {
+@keyframes monzaemonBattle {
   100%{ background-position: -260px -240px; }
 }
 
@@ -309,12 +347,12 @@
   height: 16px;
   background: url(../digimon-sprites.png) -260px -240px;
   image-rendering: pixelated;
-  animation: monzaemonBattleMid 3s steps(2) infinite;
+  animation: monzaemonEat 3s steps(2) infinite;
   zoom: 5;
 
 }
 
-@keyframes monzaemonBattleMid {
+@keyframes monzaemonEat {
   100%{ background-position: -260px -280px; }
 }
 
