@@ -1,0 +1,336 @@
+#sprites {
+  image-rendering: pixelated;
+}
+
+.flipped {
+  transform: scaleX(-1)
+}
+
+/*baby walk*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px 0px;
+  image-rendering: pixelated;
+  animation: babyWalk 3s steps(3) infinite;
+}
+
+@keyframes babyWalk {
+  100%{ background-position: 0px -60px; }
+}
+
+/*baby sleep*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -60px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes babySleep {
+  100%{ background-position: 0px -100px; }
+}
+
+/*baby no needs to flip image*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -100px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes babyNo {
+  100%{ background-position: 0px -100px; }
+}
+
+/*baby happy*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -120px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: 0px -160px; }
+}
+
+/*baby mad*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -160px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: 0px -200px; }
+}
+
+/*baby battle left*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -200px;
+/*  transform: scalex(-1) flips image;
+*/  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: 0px -240px; }
+}
+
+/*baby battle middle*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -240px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: 0px -280px; }
+}
+
+/*baby injured*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) 0px -280px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: 0px -320px; }
+}
+
+/*junior walk*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px 0px;
+  image-rendering: pixelated;
+  animation: play 3s steps(3) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -60px; }
+}
+
+/*junior sleep*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -60px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -100px; }
+}
+
+/*junior no*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -100px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -100px; }
+}
+
+/*junior happy*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -120px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -160px; }
+}
+
+/*junior mad*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -160px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -200px; }
+}
+
+/*junior battle left*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -200px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -240px; }
+}
+
+/*junior battle middle*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -240px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -280px; }
+}
+
+/*junior injured*/
+.monster {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -20px -280px;
+  image-rendering: pixelated;
+  animation: play 3s steps(2) infinite;
+}
+
+@keyframes play {
+  100%{ background-position: -20px -320px; }
+}
+
+/*monzaemon walk*/
+.monster, .monzaemon-walk {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px 0px;
+  image-rendering: pixelated;
+  animation: monzaemonWalk 3s steps(3) infinite alternate-reverse;
+  zoom:5;
+}
+
+@keyframes monzaemonWalk {
+  100%{ background-position: -260px -60px; }
+}
+
+/*monzaemon sleep*/
+.monster, .monzaemon-sleep {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -60px;
+  image-rendering: pixelated;
+  animation: monzaemonSleep 3s steps(2) infinite;
+  zoom: 5;
+}
+
+@keyframes monzaemonSleep {
+  100%{ background-position: -260px -100px; }
+}
+
+/*monzaemon no*/
+.monster, .monzaemon-no {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -100px;
+  image-rendering: pixelated;
+  animation: monzaemonNo 3s steps(2) infinite;
+  zoom: 5;
+
+}
+
+@keyframes monzaemonNo {
+  100%{ background-position: -260px -100px; }
+}
+
+/*monzaemon happy*/
+.monster, .monzaemon-happy {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -120px;
+  image-rendering: pixelated;
+  animation: monzaemonHappy 3s steps(2) infinite;
+  zoom: 5;
+
+}
+
+@keyframes monzaemonHappy {
+  100%{ background-position: -260px -160px; }
+}
+
+/*monzaemon mad*/
+.monster, .monzaemon-mad {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -160px;
+  image-rendering: pixelated;
+  animation: monzaemonMad 3s steps(2) infinite;
+  zoom: 5;
+
+}
+
+@keyframes monzaemonMad {
+  100%{ background-position: -260px -200px; }
+}
+
+/*monzaemon battle left*/
+.monster, .monzaemon-battle-left {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -200px;
+  image-rendering: pixelated;
+  animation: monzaemonBattleleft 3s steps(2) infinite;
+  zoom: 5;
+
+}
+
+@keyframes monzaemonBattleleft {
+  100%{ background-position: -260px -240px; }
+}
+
+/*monzaemon battle middle*/
+.monster, .monzaemon-battle-mid {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -240px;
+  image-rendering: pixelated;
+  animation: monzaemonBattleMid 3s steps(2) infinite;
+  zoom: 5;
+
+}
+
+@keyframes monzaemonBattleMid {
+  100%{ background-position: -260px -280px; }
+}
+
+/*monzaemon injured*/
+.monzaemon-injured {
+  width: 16px;
+  height: 16px;
+  background: url(../sprites.png) -260px -280px;
+  image-rendering: pixelated;
+  animation: monzaemonInjured 3s steps(2) infinite;
+  zoom: 5;
+  animation-name: monzaemonInjured
+
+}
+ @keyframes monzaemonInjured {
+  100%{ background-position: -260px -320px; }
+}
+
+
