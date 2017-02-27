@@ -2,11 +2,28 @@
   image-rendering: pixelated;
 }
 
+#header {
+  text-align: center;
+}
+
 #right {
-  width: 50%;
   position: absolute;
-  left: 50%;
+  right: 10%;
   display: inline-block;
+  top: 15%;
+}
+
+#mid {
+  position: absolute;
+  display: inline-block;
+  left: 40%;
+  top: 15%;
+}
+
+#left {
+  position: absolute;
+  display: inline-block;
+  left: 10%;
   top: 15%;
 }
 
