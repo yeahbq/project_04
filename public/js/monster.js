@@ -33,6 +33,27 @@ class Monster {
   }
 }
 
+// $("document").on("pageload", function() {
+//   console.log('loading your digimon');
+
+//   let digimon = new Monster;
+// })
+
+const digimon = new Monster;
+
+window.addEventListener("load", function load (evt) {
+  console.log('loading your digimon');
+  digimon.species = "hello";
+  digimon.nickname = '';
+  digimon.birthday;
+  digimon.stats.hunger = 0;
+  digimon.stats.weight = 0;
+  digimon.stats.age = 0;
+  digimon.stats.energy = 0;
+  digimon.stats.caremistake = 0;
+  window.removeEventListener("load", load)
+})
+
 let defaultMonster = (element) => {
   element.style.height = "16px";
   element.style.width = "16px";
@@ -47,6 +68,12 @@ let flip = () => {
     monster.classList.toggle('flipped')
     // teddy.classList.toggle('flipped')
   }, 3000)
+}
+
+let checkAge = () => {
+  setInterval(function () {
+
+  })
 }
 
 let sayNo = () => {

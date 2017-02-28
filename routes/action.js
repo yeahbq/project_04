@@ -5,10 +5,14 @@ const router = express.Router();
 router.put('/', (req, res, next) => {
   let action = req.query.action;
   let hunger = req.session.user.vpets.stats.hunger
-  let missedcalls = req.session.user.vpets.stats.missedcalls
+  let caremistake = req.session.user.vpets.stats.caremistake
   if(action === "feed") {
     if(hunger <= 4) {
+    //fills the hunger up to 4
     req.session.user.vpets.stats.hunger++;
+    //increases the weight by 1
+    req.session.user.vpets.stats.weight++;
+
     console.log('ate food', hunger)
     res.send(200)
     } else {
@@ -21,8 +25,8 @@ router.put('/', (req, res, next) => {
     console.log('hunger decreased', hunger)
     res.send(200)
     } else {
-      req.session.user.vpets.stats.missedcalls++;
-      console.log('missed call increased', missedcalls)
+      req.session.user.vpets.stats.caremistake++;
+      console.log('care mistake increased', caremistake)
       res.send(200)
     }
   }

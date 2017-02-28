@@ -21,6 +21,7 @@ app.set('view engine', 'hbs')
 // ROUTES
 app.use('/', require('./routes/index'))
 app.use('/action', require('./routes/action'));
+app.use('/api', require('./routes/api'));
 app.use('/auth', require('./routes/auth'));
 app.use('/example', require('./routes/example'))
 app.use('/profile', require('./routes/profile'));

@@ -5,24 +5,35 @@ const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
   const user = req.session.user;
+  // var data = {};
   if (!user) return res.redirect('/');
-  else if (!req.session.user.vpets) return res.redirect('/user/new')
+  User.find({google_id: req.session.user.id}, function (err, results) {
+  if (err) return console.error('error here', err);
+  data = results;
+    console.log('data[0]', data[0])
+    if (data[0] === undefined) return console.log('no data for this user')
+    else {
+      req.session.user.vpets = results[0].vpets
+      console.log('WRECK MEEEEE req.session.user', req.session.user)
+    }
+  })
+  if (req.session.user.vpets === undefined) return res.redirect('/user/new')
   //if a digimon object doesn't exist with this user, send them to new
-  res.render('user', {vpet: req.session.user.vpets})
+  else res.render('user', {vpets: req.session.user.vpets})
 })
 
 router.get('/new', (req, res, next) => {
   //run findOneAndUpdate
   const user = req.session.user;
   if (!user) return res.redirect('/');
-  console.log('req.session:', req.session)
+  console.log('tears reQ.Q.session:', req.session)
   res.render('new')
 })
 
 router.post('/new', (req, res, next) => {
 let vpets = req.session.user
   req.session.user.vpets = {
-  name: "",
+  species: "Botamon",
   nickname: req.body.nickname,
   birthday: new Date,
   stats: {
@@ -31,7 +42,7 @@ let vpets = req.session.user
     hunger: 0,
     strength: 0,
     energy: 0,
-    missedcalls: 0,
+    caremistake: 0,
     experience: 0,
   }
 }

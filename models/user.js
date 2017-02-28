@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 // var Monster = require('../models/Monster')
 
 var MonsterSchema = new mongoose.Schema({
-  name: String,
+  species: String,
   nickname: String,
   birthday: Date,
   stats: {
@@ -11,7 +11,7 @@ var MonsterSchema = new mongoose.Schema({
     hunger: Number,
     strength: Number,
     energy: Number,
-    missedcalls: Number,
+    caremistake: Number,
     experience: Number
   }
 })
