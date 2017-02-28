@@ -2,6 +2,16 @@
   image-rendering: pixelated;
 }
 
+canvas {
+  position: absolute;
+  left: 35%;
+}
+
+button {
+  display: block;
+  margin: 10px;
+}
+
 #nicknames {
   text-align: center;
 }
@@ -15,6 +25,12 @@
   left: 40%;
   list-style-type: none;
 }
+
+#logout {
+  position: absolute;
+  bottom: 10%;
+  left: 48%
+;}
 
 #login-btn {
   position: absolute;

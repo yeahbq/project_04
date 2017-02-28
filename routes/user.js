@@ -29,6 +29,8 @@ let vpets = req.session.user
     hunger: 0,
     strength: 0,
     energy: 0,
+    missedcalls: 0,
+    experience: 0,
   }
 }
 
