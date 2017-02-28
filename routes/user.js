@@ -63,4 +63,13 @@ let account = new User ({
   res.redirect('/user')
 })
 
+router.put('/', (req, res, next) => {
+  User.findOneAndUpdate({google_id: req.session.user.id}, {$set:{nickname:req.body.nickname} },function(err, doc){
+    if(err){
+      console.log("Something wrong when updating data!");
+    }
+    console.log(doc);
+  });
+})
+
 module.exports = router;
