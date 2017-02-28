@@ -14,10 +14,7 @@ $.put = function(url, data, callback){
 }
 
 $("#edit-btn").on('click', function(evt) {
-  let html = `<form action="/user" method="put" id="nicknameform">
-  Monster Name: <input type="text" name="nickname"><br>
-  </form>
-  <button type="submit" form="nicknameform" value="Submit">Submit</button>`
+  let html = '<form action="/user/edit" method="post" id="nicknameform"> Monster Name: <input type="text" name="nickname"><br></form><button type="submit" form="nicknameform" value="Submit">Submit</button>';
   $("#editable").html(html)
 
 })

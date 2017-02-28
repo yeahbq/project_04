@@ -4,9 +4,9 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
-  const user = req.session.user;
   var data = {};
   var newUserFlag = true;
+  const user = req.session.user;
   if (!user) return res.redirect('/');
   User.find({google_id: req.session.user.id}, function (err, results) {
   if (err) return console.error('error here', err);
@@ -59,17 +59,26 @@ let account = new User ({
 })
     account.save();
     console.log('vpet created!', req.session.user.vpets)
-
-  res.redirect('/user')
+  .then(function(evt) {
+    res.redirect('/user')
+  })
 })
 
-router.put('/', (req, res, next) => {
-  User.findOneAndUpdate({google_id: req.session.user.id}, {$set:{nickname:req.body.nickname} },function(err, doc){
-    if(err){
-      console.log("Something wrong when updating data!");
-    }
-    console.log(doc);
-  });
+router.post('/edit', (req, res, next) => {
+  const user = req.session.user;
+  if (!user) return res.redirect('/');
+
+  User.update({google_id: req.session.user.id},
+    {$set:
+      {
+        "vpets.0.nickname": req.body.nickname
+      }
+    },
+    function(err, results) {
+      if (err) console.log(err);
+      else console.log(results)
+    })
+  res.redirect('/user')
 })
 
 module.exports = router;
