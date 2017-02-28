@@ -1,6 +1,7 @@
 const express = require('express');
 const request = require('request');
 const router = express.Router();
+const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
   const user = req.session.user;
@@ -11,6 +12,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/new', (req, res, next) => {
+  //run findOneAndUpdate
   const user = req.session.user;
   if (!user) return res.redirect('/');
   console.log('req.session:', req.session)
@@ -33,7 +35,12 @@ let vpets = req.session.user
     experience: 0,
   }
 }
-
+let account = new User ({
+  name: req.session.user.displayName,
+  google_id: req.session.user.id,
+  vpets: req.session.user.vpets
+})
+  account.save();
 console.log('vpet created!', req.session.user.vpets)
   res.redirect('/user')
 })

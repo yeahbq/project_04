@@ -15,4 +15,7 @@ var MonsterSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Monster', MonsterSchema)
+let Monster = mongoose.model('Monster', MonsterSchema)
+
+
+module.exports = Monster

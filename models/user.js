@@ -1,10 +1,28 @@
 var mongoose = require('mongoose')
-var monsterSchema = require('./Monster.js')
+// var Monster = require('../models/Monster')
+
+var MonsterSchema = new mongoose.Schema({
+  name: String,
+  nickname: String,
+  birthday: Date,
+  stats: {
+    age: Number,
+    weight: Number,
+    hunger: Number,
+    strength: Number,
+    energy: Number,
+    missedcalls: Number,
+    experience: Number
+  }
+})
+
 
 var UserSchema = new mongoose.Schema({
   name: String,
-  google: String,
-  vpets: [monsterSchema]
+  google_id: String,
+  vpets: [MonsterSchema]
 })
 
-module.exports = mongoose.model('User', UserSchema)
+var User = mongoose.model('User', UserSchema);
+
+module.exports = User;
