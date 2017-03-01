@@ -43,6 +43,15 @@ let renderFood = () => {
   $('#stats-food').text(txt)
 }
 
+let renderStrength = () => {
+  var txt = ''
+  for(let i = 0; i < digimon.stats.strength; i++){
+    txt += '🍖'
+    console.log("i and stats", i, digimon.stats.strength)
+  }
+  $('#stats-protein').text(txt)
+}
+
 $("#food").on('click', $('body'), (evt) => {
   console.log('food clicked')
   babyNo(monster);
@@ -58,7 +67,17 @@ $("#food").on('click', $('body'), (evt) => {
 
 $("#train").on('click', $('body'), (evt) => {
   console.log('train clicked')
+  babySleep(monster);
+  $.put('/action?action=strength', {times: 1}, function(result){
+     console.log(result);
+     digimon.stats.strength++
+     renderStrength();
+     if (result === 201) {
+      console.log('he too buff')
+     }
+  })
 })
+
 
 $("#toilet").on('click', $('body'), (evt) => {
   console.log('toilet clicked')

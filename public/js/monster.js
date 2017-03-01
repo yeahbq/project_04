@@ -49,11 +49,13 @@ window.addEventListener("load", function load (evt) {
   digimon.nickname = res[0].vpets[0].nickname;
   digimon.birthday = res[0].vpets[0].birthday;
   digimon.stats.hunger = res[0].vpets[0].stats.hunger;
+  digimon.stats.strength = res[0].vpets[0].stats.strength;
   digimon.stats.weight = res[0].vpets[0].stats.weight;
   digimon.stats.age = res[0].vpets[0].stats.age;
   digimon.stats.energy = res[0].vpets[0].stats.energy;
   digimon.stats.caremistake = res[0].vpets[0].stats.caremistake;
   renderFood();
+  renderStrength();
   })
 
 
@@ -96,17 +98,22 @@ let sayNo = () => {
 }
 
 let eventTimer = () => {
-  setInterval(function foodTimer() {
-    console.log('time to eat!')
-    digimon.stats.hunger--
-    renderFood();
-    $.put('/action?action=feedsubtract', {times: 1}, function(result){
-     console.log(result);
-  })
-  }, 10000)
+  // setInterval(function foodTimer() {
+  //   console.log('time to eat!')
+  //   digimon.stats.hunger--
+  //   renderFood();
+  //   $.put('/action?action=feedsubtract', {times: 1}, function(result){
+  //    console.log(result);
+  // })
+  // }, 10000)
   setInterval(function pooTimer() {
     console.log('💩')
-  }, 50000)
+    digimon.stats.strength--
+    renderStrength();
+    $.put('/action?action=strengthsubtract', {times: 1}, function(result){
+       console.log(result);
+  })
+  }, 10000)
 }
 
 let babyWalk = (element) => {
