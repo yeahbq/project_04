@@ -14,6 +14,18 @@ router.put('/', (req, res, next) => {
     //increases the weight by 1
     req.session.user.vpets.stats.weight++;
 
+      User.update({google_id: req.session.user.id},
+    {$set:
+      {
+        "vpets.0.stats.weight": req.session.user.vpets.stats.weight,
+        "vpets.0.stats.hunger": req.session.user.vpets.stats.hunger,
+      }
+    },
+    function(err, results) {
+      if (err) console.log(err);
+      else console.log(results)
+    })
+
     console.log('ate food', hunger)
     res.send(200)
     } else {
@@ -23,28 +35,48 @@ router.put('/', (req, res, next) => {
   if(action === "feedsubtract") {
     if(hunger > 0){
     req.session.user.vpets.stats.hunger--;
-    console.log('hunger decreased', hunger)
-    res.send(200)
-    } else {
-      req.session.user.vpets.stats.caremistake++;
-      console.log('care mistake increased', caremistake)
-      res.send(200)
-    }
-  }
-
-  User.update({google_id: req.session.user.id},
+    User.update({google_id: req.session.user.id},
     {$set:
       {
-        "vpets.0.stats.weight": req.session.user.vpets.stats.weight,
-        "vpets.0.stats.hunger": req.session.user.vpets.stats.hunger,
-        "vpets.0.stats.caremistake": req.session.user.vpets.stats.caremistake
+        "vpets.0.stats.hunger": req.session.user.vpets.stats.hunger
       }
     },
     function(err, results) {
       if (err) console.log(err);
       else console.log(results)
     })
-  res.redirect('/user')
+    console.log('hunger decreased', hunger)
+    res.send(200)
+    } else {
+      req.session.user.vpets.stats.caremistake++;
+      User.update({google_id: req.session.user.id},
+      {$set:
+        {
+          "vpets.0.stats.caremistake": req.session.user.vpets.stats.hunger
+        }
+      },
+      function(err, results) {
+        if (err) console.log(err);
+        else console.log(results)
+      })
+      console.log('care mistake increased', caremistake)
+      res.send(200)
+    }
+  }
+
+  // User.update({google_id: req.session.user.id},
+  //   {$set:
+  //     {
+  //       "vpets.0.stats.weight": req.session.user.vpets.stats.weight,
+  //       "vpets.0.stats.hunger": req.session.user.vpets.stats.hunger,
+  //       "vpets.0.stats.caremistake": req.session.user.vpets.stats.caremistake
+  //     }
+  //   },
+  //   function(err, results) {
+  //     if (err) console.log(err);
+  //     else console.log(results)
+  //   })
+  // res.redirect('/user')
 })
 
 module.exports = router;
