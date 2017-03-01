@@ -52,6 +52,12 @@ let renderStrength = () => {
   $('#stats-protein').text(txt)
 }
 
+let renderPoop = () => {
+  let txt = $('#poop').text()
+  txt += '💩'
+  $('#poop').text(txt)
+}
+
 $("#food").on('click', $('body'), (evt) => {
   console.log('food clicked')
   babyNo(monster);

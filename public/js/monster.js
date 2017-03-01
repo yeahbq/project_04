@@ -110,6 +110,7 @@ let eventTimer = () => {
     console.log('💩')
     digimon.stats.strength--
     renderStrength();
+    renderPoop();
     $.put('/action?action=strengthsubtract', {times: 1}, function(result){
        console.log(result);
   })
