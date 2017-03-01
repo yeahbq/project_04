@@ -19,6 +19,21 @@ $("#edit-btn").on('click', function(evt) {
 
 })
 
+$("#delete-btn").on('click', function(evt) {
+  $.ajax({
+    url: '/user',
+    type: 'DELETE',
+    success: function(result){
+      let html = `<h3> Your monster has returned back to the mainframe</h3>
+      <img id="sprites" src="/mainframe.png" alt="mainframe"> <br><br>
+      <a href="/user">Find another pest</a> <br><br>
+      `
+      $("#left").html(html)
+     console.log(result);},
+    data: {delete: 1}
+  })
+})
+
 $("#food").on('click', $('body'), (evt) => {
   console.log('food clicked')
   babyNo(monster);

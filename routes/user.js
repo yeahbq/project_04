@@ -59,9 +59,10 @@ let account = new User ({
 })
     account.save();
     console.log('vpet created!', req.session.user.vpets)
-  .then(function(evt) {
-    res.redirect('/user')
-  })
+  // .then(function() {
+  //   res.redirect('/user')
+  // })
+  res.redirect('/user');
 })
 
 router.post('/edit', (req, res, next) => {
@@ -79,6 +80,17 @@ router.post('/edit', (req, res, next) => {
       else console.log(results)
     })
   res.redirect('/user')
+})
+
+router.delete('/', (req, res, next) => {
+  const user = req.session.user;
+  if (!user) return res.redirect('/');
+
+  User.findOneAndRemove({google_id: req.session.user.id}, function(err) {
+    if (err) throw err;
+    console.log('digimon deleted!');
+  });
+  res.send('deleted')
 })
 
 module.exports = router;
