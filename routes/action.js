@@ -1,6 +1,7 @@
 const express = require('express');
 const request = require('request');
 const router = express.Router();
+const User = require('../models/user');
 
 router.put('/', (req, res, next) => {
   let action = req.query.action;
@@ -30,6 +31,20 @@ router.put('/', (req, res, next) => {
       res.send(200)
     }
   }
+
+  User.update({google_id: req.session.user.id},
+    {$set:
+      {
+        "vpets.0.stats.weight": req.session.user.vpets.stats.weight,
+        "vpets.0.stats.hunger": req.session.user.vpets.stats.hunger,
+        "vpets.0.stats.caremistake": req.session.user.vpets.stats.caremistake
+      }
+    },
+    function(err, results) {
+      if (err) console.log(err);
+      else console.log(results)
+    })
+  res.redirect('/user')
 })
 
 module.exports = router;
