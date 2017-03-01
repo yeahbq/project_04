@@ -12,7 +12,7 @@ let monster = document.querySelector('#monster');
 
 
 function setup() {
-  createCanvas(40, 40);
+  createCanvas(400, 400);
 }
 
 function draw() {
@@ -54,6 +54,7 @@ window.addEventListener("load", function load (evt) {
   digimon.stats.age = res[0].vpets[0].stats.age;
   digimon.stats.energy = res[0].vpets[0].stats.energy;
   digimon.stats.caremistake = res[0].vpets[0].stats.caremistake;
+  // digimon.stats.poop = res[0].vpets[0].stats.poop;
   renderFood();
   renderStrength();
   })
@@ -72,7 +73,7 @@ let defaultMonster = (element) => {
 //element refers to div name to target
 //aniName refers to @keyFrame name to match css
 let flip = () => {
-  setInterval(function loopWalk () {
+  setInterval(function () {
     monster.classList.toggle('flipped')
     // teddy.classList.toggle('flipped')
   }, 3000)
@@ -98,18 +99,19 @@ let sayNo = () => {
 }
 
 let eventTimer = () => {
-  // setInterval(function foodTimer() {
-  //   console.log('time to eat!')
-  //   digimon.stats.hunger--
-  //   renderFood();
-  //   $.put('/action?action=feedsubtract', {times: 1}, function(result){
-  //    console.log(result);
-  // })
-  // }, 10000)
+  setInterval(function foodTimer() {
+    console.log('time to eat!')
+    digimon.stats.hunger--
+    renderFood();
+    $.put('/action?action=feedsubtract', {times: 1}, function(result){
+     console.log(result);
+  })
+  }, 10000)
   setInterval(function pooTimer() {
     console.log('💩')
     digimon.stats.strength--
     renderStrength();
+    digimon.stats.poop++
     renderPoop();
     $.put('/action?action=strengthsubtract', {times: 1}, function(result){
        console.log(result);

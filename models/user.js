@@ -12,7 +12,8 @@ var MonsterSchema = new mongoose.Schema({
     strength: Number,
     energy: Number,
     caremistake: Number,
-    experience: Number
+    experience: Number,
+    poop: Number
   }
 })
 
