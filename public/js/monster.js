@@ -42,15 +42,21 @@ class Monster {
 const digimon = new Monster;
 
 window.addEventListener("load", function load (evt) {
+  $.get('/api/user', function(res) {
+    console.log('res', res)
   console.log('loading your digimon');
-  digimon.species = "hello";
-  digimon.nickname = '';
-  digimon.birthday;
-  digimon.stats.hunger = 0;
-  digimon.stats.weight = 0;
-  digimon.stats.age = 0;
-  digimon.stats.energy = 0;
-  digimon.stats.caremistake = 0;
+  digimon.species = res[0].vpets[0].species;
+  digimon.nickname = res[0].vpets[0].nickname;
+  digimon.birthday = res[0].vpets[0].birthday;
+  digimon.stats.hunger = res[0].vpets[0].stats.hunger;
+  digimon.stats.weight = res[0].vpets[0].stats.weight;
+  digimon.stats.age = res[0].vpets[0].stats.age;
+  digimon.stats.energy = res[0].vpets[0].stats.energy;
+  digimon.stats.caremistake = res[0].vpets[0].stats.caremistake;
+  renderFood();
+  })
+
+
   window.removeEventListener("load", load)
 })
 
@@ -92,6 +98,8 @@ let sayNo = () => {
 let eventTimer = () => {
   setInterval(function foodTimer() {
     console.log('time to eat!')
+    digimon.stats.hunger--
+    renderFood();
     $.put('/action?action=feedsubtract', {times: 1}, function(result){
      console.log(result);
   })

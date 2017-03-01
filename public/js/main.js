@@ -34,16 +34,24 @@ $("#delete-btn").on('click', function(evt) {
   })
 })
 
+let renderFood = () => {
+  var txt = ''
+  for(let i = 0; i < digimon.stats.hunger; i++){
+    txt += '❤️️'
+    console.log("i and stats", i, digimon.stats.hunger)
+  }
+  $('#stats-food').text(txt)
+}
+
 $("#food").on('click', $('body'), (evt) => {
   console.log('food clicked')
   babyNo(monster);
   $.put('/action?action=feed', {times: 1}, function(result){
      console.log(result);
-     let txt = $('#stats-food').text();
-     $('#stats-food').text(txt + '❤️️')
+     digimon.stats.hunger++
+     renderFood();
      if (result === 201) {
       console.log('he ate too much')
-
      }
   })
 })
