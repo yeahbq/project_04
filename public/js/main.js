@@ -24,6 +24,7 @@ $.put = function(url, data, callback){
 
 // })
 
+
 $("#delete-btn").on('click', function(evt) {
   $.ajax({
     url: '/user',
@@ -36,6 +37,7 @@ $("#delete-btn").on('click', function(evt) {
       <a href="/user">Find another pest</a> <br><br>
       `
       $("body").html(html)
+
      console.log(result);},
     data: {delete: 1}
   })

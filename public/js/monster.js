@@ -1,5 +1,6 @@
 console.log('hello from monster.js')
 
+
 let teddy = document.querySelector('.monzaemon-walk');
 let monster = document.querySelector('#monster');
 
@@ -23,6 +24,7 @@ let monster = document.querySelector('#monster');
 //   }
 //   ellipse(mouseX, mouseY, 80, 80);
 // }
+
 
 class Monster {
   constructor(name, nickname) {
@@ -60,6 +62,7 @@ window.addEventListener("load", function load (evt) {
   // })
 
 
+
   window.removeEventListener("load", load)
 })
 
@@ -75,12 +78,14 @@ let defaultMonster = (element) => {
 //aniName refers to @keyFrame name to match css
 let flip = () => {
   return setInterval(function () {
+
     monster.classList.toggle('flipped')
     // teddy.classList.toggle('flipped')
   }, 3000)
 }
 
 var flipId = flip();
+
 
 let checkAge = () => {
   setInterval(function () {
@@ -106,6 +111,7 @@ let sayNo = () => {
   }
 
   myStopFunction();
+
 }
 
 let eventTimer = () => {
@@ -117,6 +123,7 @@ let eventTimer = () => {
      console.log(result);
   })
   }, 15000)
+
   setInterval(function pooTimer() {
     console.log('💩')
     digimon.stats.strength--
@@ -130,6 +137,7 @@ let eventTimer = () => {
 }
 
 let babyWalk = (element) => {
+
   defaultMonster(element);
   element.style.background = "url(../digimon-sprites.png) 0px 0px";
   element.style.animation = `babyWalk 3s steps(3) infinite`
@@ -159,4 +167,5 @@ function myStopFunction() {
 //calling baby walk to start game
 babyWalk(monster);
 // eventTimer();
+
 
