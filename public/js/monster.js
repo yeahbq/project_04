@@ -10,22 +10,38 @@ let monster = document.querySelector('#monster');
 //   this.classList.toggle('monzaemon-happy');
 // })
 
-
-
 var bg;
 var night;
+var sprite_sheet_image;
+var sprite_sheet;
+var walk_animation;
+
+function preload() {
+  // specify width and height of each frame and number of frames
+  sprite_sheet = loadSpriteSheet('/assets/images/digimon-sprites.png', 100, 100, 3);
+  // walk_animation = loadAnimation(sprite_sheet);
+
+var player_frames = loadJSON('/assets/sprites.json');
+player_sprite_sheet = loadSpriteSheet('/assets/images/digimon-sprites.png', player_frames);
+walk_animation = loadAnimation(player_sprite_sheet);
+
+}
+
 function setup() {
   var canvas = createCanvas(400, 400);
   canvas.parent('middle')
   stroke(255, 0, 255);     // Set line drawing color to white
-  frameRate(30);
-  createSprite(200, 100, 50, 50);
+  frameRate(3);
+  // createSprite(200, 100, 50, 50);
   bg = loadImage("/assets/images/grass.jpg")
   night = loadImage("/assets/images/night.jpg")
 }
 var y = 100;
 
 function draw() {
+  clear();
+
+
    y = y - 1;
   if (y < 0) {
     y = height;
@@ -34,6 +50,7 @@ function draw() {
   background(bg);
   drawSprites();
   line(0, y, width, y);
+  animation(walk_animation, 220, 300);
 }
 
 

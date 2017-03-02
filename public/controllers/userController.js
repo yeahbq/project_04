@@ -20,6 +20,7 @@
     vm.editAppear = editAppear;
     vm.stopInterval = stopInterval;
     vm.useToilet = useToilet;
+    vm.lights = lights;
 
     function callAtInterval() {
 
@@ -140,6 +141,11 @@
       });
     }
 
+    function lights(evt){
+      var play = document.querySelector('#playSpace');
+      play.classList.toggle('night');
+    }
+
     function getStats() {
       //get stats then save them to vm.info
       $http
@@ -156,7 +162,7 @@
       })
     }
     getStats();
-    // $interval(reduceStrength, 10000);
+    $interval(reduceStrength, 10000);
 
     function stopInterval(promise) {
       console.log('stopping time', promise)

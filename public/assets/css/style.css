@@ -12,10 +12,6 @@ button {
   margin: 10px;
 }
 
-.night {
-  background: url("/assets/images/night.jpg")
-}
-
 #nicknames {
   text-align: center;
 }
@@ -54,6 +50,27 @@ button {
   top: 15%;
 }
 
+#playSpace {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background: url('/assets/images/grass.jpg');
+  background-size: 500px;
+  background-repeat: no-repeat;
+  margin: 20px;
+
+}
+
+.night {
+  background: url('/assets/images/night.jpg')!important;
+  background-size: 500px!important;
+  background-repeat: no-repeat!important;
+}
+
+#display-stats{
+  margin: 20px;
+}
+
 #middle {
   position: absolute;
   display: inline-block;
@@ -64,8 +81,8 @@ button {
 #left {
   position: absolute;
   display: inline-block;
-  left: 10%;
-  top: 15%;
+  left: 40%;
+  bottom: 30%;
 }
 
 .flipped {
