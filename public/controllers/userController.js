@@ -156,7 +156,7 @@
       })
     }
     getStats();
-    $interval(reduceStrength, 10000);
+    // $interval(reduceStrength, 10000);
 
     function stopInterval(promise) {
       console.log('stopping time', promise)

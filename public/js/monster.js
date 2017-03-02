@@ -12,18 +12,16 @@ let monster = document.querySelector('#monster');
 
 
 
-// function setup() {
-//   createCanvas(400, 400);
-// }
+function setup() {
+  var canvas = createCanvas(400, 400);
+  canvas.parent('middle')
+  background(255, 0, 120);
+  createSprite(200, 100, 50, 50);
+}
 
-// function draw() {
-//   if (mouseIsPressed) {
-//     fill(0);
-//   } else {
-//     fill(255);
-//   }
-//   ellipse(mouseX, mouseY, 80, 80);
-// }
+function draw() {
+ drawSprites();
+}
 
 
 class Monster {
