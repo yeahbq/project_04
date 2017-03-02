@@ -5,12 +5,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session')
 var morgan = require('morgan')
 var methodOverride = require('method-override'); //used to manipulate POST
-
-
-
 var app = express();
 var hbs = require('express-handlebars')
-
 var mongoose = require('./api/config/database');
 var routes = require('./api/config/routes');
 
@@ -29,4 +25,7 @@ app.use('/action', require('./api/controllers/action'));
 app.use('/auth', require('./api/controllers/auth'));
 app.use('/profile', require('./api/controllers/profile'));
 
-app.listen(3000);
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  console.log(`Listening on ${port}`)
+})
