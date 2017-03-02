@@ -3,18 +3,14 @@
 
 <div id="left">
   <div id="greet-monster">Say hello to {{vpets.nickname}}</div>
-  <div id="monster">
+  <div id="monster"></div>
 </div>
 
-<div id="middle">
+<div id="middle"></div>
 
-</div>
-
-
-</div>
 <div id="right">
-    <form ng-submit='user.addFood()'><button type="submit">Feed</button></form>
-    <form ng-submit='user.addStrength()'><button type="submit">Train</button></form>
+  <form ng-submit='user.addFood()'><button type="submit">Feed</button></form>
+  <form ng-submit='user.addStrength()'><button type="submit">Train</button></form>
   <button id="toilet" ng-click="user.useToilet()">Toilet</button>
   <button ng-click="user.stopInterval('$interval(callAtInterval, 5000)')" id="lights">Lights</button>
   <div id="deletable">
@@ -37,7 +33,6 @@ STRENGTH:<div id="stats-protein"></div>
 
 
 <script src="/app.js" charset="utf-8"></script>
-<script src="/controllers/tamaController.js" charset="utf-8"></script>
 <script src="/controllers/userController.js" charset="utf-8"></script>
 <script src="/js/monster.js"></script>
 

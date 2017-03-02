@@ -33,7 +33,7 @@ $("#delete-btn").on('click', function(evt) {
       let html = `
       <h1 id="header"> V I R T U A L - P E S T S </h1>
       <h3> Your monster has returned back to the mainframe</h3>
-      <img id="sprites" src="/mainframe.png" alt="mainframe"> <br><br>
+      <img id="sprites" src="/assets/images/mainframe.png" alt="mainframe"> <br><br>
       <a href="/user">Find another pest</a> <br><br>
       `
       $("body").html(html)

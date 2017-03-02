@@ -2,14 +2,18 @@
   image-rendering: pixelated;
 }
 
-canvas {
+/*canvas {
   position: absolute;
   left: 35%;
-}
+}*/
 
 button {
   display: block;
   margin: 10px;
+}
+
+.night {
+  background: url("/assets/images/night.jpg")
 }
 
 #nicknames {
@@ -50,7 +54,7 @@ button {
   top: 15%;
 }
 
-#mid {
+#middle {
   position: absolute;
   display: inline-block;
   left: 47%;

@@ -12,16 +12,30 @@ let monster = document.querySelector('#monster');
 
 
 
+var bg;
+var night;
 function setup() {
   var canvas = createCanvas(400, 400);
   canvas.parent('middle')
-  background(255, 0, 120);
+  stroke(255, 0, 255);     // Set line drawing color to white
+  frameRate(30);
   createSprite(200, 100, 50, 50);
+  bg = loadImage("/assets/images/grass.jpg")
+  night = loadImage("/assets/images/night.jpg")
 }
+var y = 100;
 
 function draw() {
- drawSprites();
+   y = y - 1;
+  if (y < 0) {
+    y = height;
+  }
+  // background(night);
+  background(bg);
+  drawSprites();
+  line(0, y, width, y);
 }
+
 
 
 class Monster {
