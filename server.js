@@ -4,6 +4,8 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var session = require('express-session')
 var morgan = require('morgan')
+var methodOverride = require('method-override'); //used to manipulate POST
+
 
 
 var app = express();
