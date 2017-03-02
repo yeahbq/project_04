@@ -1,72 +1,72 @@
-var President = require('../models/President');
+// var President = require('../models/President');
 
-// GET
-function getAll(request, response) {
-  President.find(function(error, presidents) {
-    if(error) response.json({message: 'Could not find any president'});
+// // GET
+// function getAll(request, response) {
+//   President.find(function(error, presidents) {
+//     if(error) response.json({message: 'Could not find any president'});
 
-    response.json({presidents: presidents});
-  });
-}
+//     response.json({presidents: presidents});
+//   });
+// }
 
-// POST
-function createPresident(request, response) {
-  console.log('in POST');
-  console.log('body:',request.body);
+// // POST
+// function createPresident(request, response) {
+//   console.log('in POST');
+//   console.log('body:',request.body);
 
-  var president = new President(request.body);
+//   var president = new President(request.body);
 
-  president.save(function(error) {
-    if (error) response.json({messsage: 'Could not ceate president b/c:' + error});
+//   president.save(function(error) {
+//     if (error) response.json({messsage: 'Could not ceate president b/c:' + error});
 
-    response.json({president: president, message: "President successfully added."});
-  });
-}
+//     response.json({president: president, message: "President successfully added."});
+//   });
+// }
 
-// GET
-function getPresident(request, response) {
-  var id = request.params.id;
+// // GET
+// function getPresident(request, response) {
+//   var id = request.params.id;
 
-  President.findById({_id: id}, function(error, president) {
-    if(error) response.json({message: 'Could not find president b/c:' + error});
+//   President.findById({_id: id}, function(error, president) {
+//     if(error) response.json({message: 'Could not find president b/c:' + error});
 
-    response.json({president: president});
-  });
-}
+//     response.json({president: president});
+//   });
+// }
 
-function updatePresident(request, response) {
-  var id = request.params.id;
+// function updatePresident(request, response) {
+//   var id = request.params.id;
 
-  President.findById({_id: id}, function(error, president) {
-    if(error) response.json({message: 'Could not find president b/c:' + error});
+//   President.findById({_id: id}, function(error, president) {
+//     if(error) response.json({message: 'Could not find president b/c:' + error});
 
-    if(request.body.name) president.name = request.body.name;
-    if(request.body.start) president.start = request.body.start;
-    if(request.body.end) president.end = request.body.end;
-    if(request.body.uncovered !== undefined) president.uncovered = request.body.uncovered;
+//     if(request.body.name) president.name = request.body.name;
+//     if(request.body.start) president.start = request.body.start;
+//     if(request.body.end) president.end = request.body.end;
+//     if(request.body.uncovered !== undefined) president.uncovered = request.body.uncovered;
 
-    president.save(function(error) {
-      if(error) response.json({messsage: 'Could not update president b/c:' + error});
+//     president.save(function(error) {
+//       if(error) response.json({messsage: 'Could not update president b/c:' + error});
 
-      response.json({message: 'President successfully updated', president: president});
-    });
-  });
-}
+//       response.json({message: 'President successfully updated', president: president});
+//     });
+//   });
+// }
 
-function removePresident(request, response) {
-  var id = request.params.id;
+// function removePresident(request, response) {
+//   var id = request.params.id;
 
-  President.remove({_id: id}, function(error) {
-    if(error) response.json({message: 'Could not delete president b/c:' + error});
+//   President.remove({_id: id}, function(error) {
+//     if(error) response.json({message: 'Could not delete president b/c:' + error});
 
-    response.json({message: 'President successfully deleted'});
-  });
-}
+//     response.json({message: 'President successfully deleted'});
+//   });
+// }
 
-module.exports = {
-  getAll: getAll,
-  createPresident: createPresident,
-  getPresident: getPresident,
-  updatePresident: updatePresident,
-  removePresident: removePresident
-}
+// module.exports = {
+//   getAll: getAll,
+//   createPresident: createPresident,
+//   getPresident: getPresident,
+//   updatePresident: updatePresident,
+//   removePresident: removePresident
+// }
