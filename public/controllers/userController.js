@@ -23,12 +23,13 @@
     vm.hungry = true;
     vm.pumped = true;
 
+//========CRUD OF MONSTER FUNCTIONS=======
+
     function newMonster (){
       $http
       .post('/user/new', vm.info)
       .then(function(res) {
        console.log('new monster created, response: ', res)
-       // document.body.innerHTML = res.data;
        $window.location='/user';
       }, function(err) {
         console.log(err);
@@ -40,10 +41,9 @@
       $http
       .put('/user/', vm.info)
       .then(function(res) {
-       console.log('updating monster nickname, response: ', res)
        var txt = "updated monster name to " + vm.info.vpets.nickname;
        $('#nickname-msg').text(txt)
-       $('#greet-monster').text('Say hello to ' + vm.info.vpets.nickname)
+       $('#greet-monster').html('<h3>Say hello to ' + vm.info.vpets.nickname + '</h3>')
       }, function(err) {
         console.log(err);
       });
@@ -60,20 +60,9 @@
       </div>
       `
       $("#playSpace").html(html)
-      console.log('RESULT FROM DERETE', res)
       })
     }
 
-    function reduceFood(){
-      $http
-      .put('/action?action=feedsubtract', {times: 1})
-      .then(function(res) {
-        console.log('time to eat!!!')
-        getStats();
-      }, function(err) {
-        console.log(err);
-      });
-    }
 
 //======RENDER FUNCTIONS OF IMAGES ON SCREEN
 
@@ -101,7 +90,7 @@
       $('#poop').text(txt)
     }
 
-//=======$HTTP REQUEST FUNCTIONS
+//========STAT CHANGING FUNCTIONS=======
 
     function addFood(){
       if(!vm.hungry) {
@@ -126,7 +115,6 @@
       $http
       .put('/action?action=feed', {times: 1})
       .then(function(res) {
-        console.log('feeding and response', res)
         if(res.status === 201) vm.hungry = false;
         getStats();
       }, function(err) {
@@ -137,7 +125,6 @@
     function addStrength(){
       if(!vm.pumped) {
         monster.textContent = "😣"
-        console.log('he is too weak to workout')
       } else{
         if (vm.info.vpets.species === "monzaemon") {
           monster.style.background = "url(/assets/images/digimon-sprites.png) -260px -120px"
@@ -156,9 +143,18 @@
       $http
       .put('/action?action=strength', {times: 1})
       .then(function(res) {
-       console.log('gain powah and res', res)
        if(res.status === 201) vm.pumped = false;
        getStats();
+      }, function(err) {
+        console.log(err);
+      });
+    }
+
+    function reduceFood(){
+      $http
+      .put('/action?action=feedsubtract', {times: 1})
+      .then(function(res) {
+        getStats();
       }, function(err) {
         console.log(err);
       });
@@ -168,7 +164,6 @@
       $http
       .put('/action?action=strengthsubtract', {times: 1})
       .then(function(res) {
-        console.log('strength reduced weakling!!!')
         getStats();
       }, function(err) {
         console.log(err);
@@ -179,7 +174,6 @@
       $http
       .put('/action?action=toilet', {times: 1})
       .then(function(res) {
-        console.log('toilet time')
         getStats();
       }, function(err) {
         console.log(err);
@@ -214,11 +208,9 @@
       $http
       .get('/api/user')
       .then(function(res) {
-       console.log('grabbing stats', res)
-       if(!res.data[0]) return console.log('no vpet info')
+      if(!res.data[0]) return console.log('no vpet info')
+      vm.info.vpets = res.data[0].vpets[0]
 
-        vm.info.vpets = res.data[0].vpets[0]
-      // console.log('stats loaded into vm.info!', vm.info)
       renderFood();
       renderStrength();
       renderPoop();
@@ -246,34 +238,34 @@
       }
 
 //RUNS ON LOAD
-  var monster = document.querySelector('#monster');
-  function defaultMonster(){
-    monster.style.height = "16px";
-    monster.style.width = "16px";
-    monster.style.imageRendering = "pixelated";
-    monster.style.zoom = "5";
-  }
-  function babyWalk (){
+    var monster = document.querySelector('#monster');
+    function defaultMonster(){
+      monster.style.height = "16px";
+      monster.style.width = "16px";
+      monster.style.imageRendering = "pixelated";
+      monster.style.zoom = "5";
+    }
+    function babyWalk (){
+      defaultMonster();
+      monster.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
+      monster.style.animation = `babyWalk 3s steps(3) infinite`
+    }
+
+    function juniorWalk (){
     defaultMonster();
-    monster.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
-    monster.style.animation = `babyWalk 3s steps(3) infinite`
+    monster.style.background = "url(/assets/images/digimon-sprites.png) -20px 0px";
+    monster.style.animation = `juniorWalk 3s steps(3) infinite`
   }
 
-  function juniorWalk (){
-  defaultMonster();
-  monster.style.background = "url(/assets/images/digimon-sprites.png) -20px 0px";
-  monster.style.animation = `juniorWalk 3s steps(3) infinite`
-}
+   function monzaemonWalk (){
+    defaultMonster();
+    monster.style.background = "url(/assets/images/digimon-sprites.png) -260px 0px";
+    monster.style.animation = `monzaemonWalk 3s steps(3) infinite`
+  }
 
- function monzaemonWalk (){
-  defaultMonster();
-  monster.style.background = "url(/assets/images/digimon-sprites.png) -260px 0px";
-  monster.style.animation = `monzaemonWalk 3s steps(3) infinite`
-}
-
-  getStats();
-  $interval(reduceStrength, 45000);
-  $interval(reduceFood, 60000);
+    getStats();
+    $interval(reduceStrength, 45000);
+    $interval(reduceFood, 60000);
 
 //END OF CONTROLLER
   }
