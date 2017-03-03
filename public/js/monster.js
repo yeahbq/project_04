@@ -2,7 +2,7 @@ console.log('hello from monster.js')
 
 
 let teddy = document.querySelector('.monzaemon-walk');
-let monster = document.querySelector('#monster');
+// var monster = document.querySelector('#monster');
 
 // teddy.addEventListener('click', function(evt) {
 //   console.log('clicked')
@@ -95,12 +95,12 @@ window.addEventListener("load", function load (evt) {
   window.removeEventListener("load", load)
 })
 
-let defaultMonster = (element) => {
-  element.style.height = "16px";
-  element.style.width = "16px";
-  element.style.imageRendering = "pixelated";
-  element.style.zoom = "5";
-}
+// let defaultMonster = (element) => {
+//   element.style.height = "16px";
+//   element.style.width = "16px";
+//   element.style.imageRendering = "pixelated";
+//   element.style.zoom = "5";
+// }
 
 
 //element refers to div name to target
@@ -116,85 +116,85 @@ let defaultMonster = (element) => {
 // var flipId = flip();
 
 
-let checkAge = () => {
-  setInterval(function () {
+// let checkAge = () => {
+//   setInterval(function () {
 
-  })
-}
+//   })
+// }
 
-var noId = ''
+// var noId = ''
 
-let sayNo = () => {
-  // myStopFunction();
-  noId = no();
-  let counter = 0;
-  function no (){
-    return setInterval(function() {
-      monster.classList.toggle('flipped')
-      counter += 1;
-      console.log(counter)
-      if (counter > 3) {
-        return console.log('times up')
-      }
-    }, 500)
-  }
+// let sayNo = () => {
+//   // myStopFunction();
+//   noId = no();
+//   let counter = 0;
+//   function no (){
+//     return setInterval(function() {
+//       monster.classList.toggle('flipped')
+//       counter += 1;
+//       console.log(counter)
+//       if (counter > 3) {
+//         return console.log('times up')
+//       }
+//     }, 500)
+//   }
 
-  myStopFunction();
+//   myStopFunction();
 
-}
+// }
 
-let eventTimer = () => {
-  setInterval(function foodTimer() {
-    console.log('time to eat!')
-    digimon.stats.hunger--
-    renderFood();
-    $.put('/action?action=feedsubtract', {times: 1}, function(result){
-     console.log(result);
-  })
-  }, 15000)
+// let eventTimer = () => {
+//   setInterval(function foodTimer() {
+//     console.log('time to eat!')
+//     digimon.stats.hunger--
+//     renderFood();
+//     $.put('/action?action=feedsubtract', {times: 1}, function(result){
+//      console.log(result);
+//   })
+//   }, 15000)
 
-  setInterval(function pooTimer() {
-    console.log('💩')
-    digimon.stats.strength--
-    renderStrength();
-    digimon.stats.poop++
-    renderPoop();
-    $.put('/action?action=strengthsubtract', {times: 1}, function(result){
-       console.log(result);
-  })
-  }, 10000)
-}
+//   setInterval(function pooTimer() {
+//     console.log('💩')
+//     digimon.stats.strength--
+//     renderStrength();
+//     digimon.stats.poop++
+//     renderPoop();
+//     $.put('/action?action=strengthsubtract', {times: 1}, function(result){
+//        console.log(result);
+//   })
+//   }, 10000)
+// }
 
-let babyWalk = (element) => {
+// let babyWalk = (element) => {
 
-  defaultMonster(element);
-  element.style.background = "url(../digimon-sprites.png) 0px 0px";
-  element.style.animation = `babyWalk 3s steps(3) infinite`
-}
-
-
-let babySleep = (element) => {
-  myStopFunction('flip');
-  element.style.background = "url(../digimon-sprites.png) 0px -60px";
-  element.style.animation = `babySleep 3s steps(2) infinite`
-}
-
-//bugged after I took the function scope out
-let babyNo = (element) => {
-  myStopFunction();
-  element.style.background = "url(../digimon-sprites.png) 0px -100px";
-  element.style.animation = `babyNo 2`
-  // sayNo();
-  // babyWalk(monster);
-}
+//   defaultMonster(element);
+//   element.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
+//   element.style.animation = `babyWalk 3s steps(3) infinite`
+// }
 
 
-function myStopFunction() {
-  clearInterval(flipId);
-  clearInterval(noId);
-}
+// let babySleep = (element) => {
+//   myStopFunction('flip');
+//   element.style.background = "url(/assets/images/digimon-sprites.png) 0px -60px";
+//   element.style.animation = `babySleep 3s steps(2) infinite`
+// }
+
+// //bugged after I took the function scope out
+// let babyNo = (element) => {
+//   myStopFunction();
+//   element.style.background = "url(/assets/images/digimon-sprites.png) 0px -100px";
+//   element.style.animation = `babyNo 2`
+//   // sayNo();
+//   // babyWalk(monster);
+// }
+
+
+// function myStopFunction() {
+//   clearInterval(flipId);
+//   clearInterval(noId);
+// }
 //calling baby walk to start game
-babyWalk(monster);
+// babyWalk(monster);
 // eventTimer();
 
 

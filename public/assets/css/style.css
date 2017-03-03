@@ -98,7 +98,7 @@ button {
 .monster, .baby-walk {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px 0px;
+  background: url(/assets/images/digimon-sprites.png) 0px 0px;
   image-rendering: pixelated;
   animation: babyWalk 3s steps(3) infinite;
   zoom: 5;
@@ -113,7 +113,7 @@ button {
 .monster, .baby-sleep {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px -60px;
+  background: url(/assets/images/digimon-sprites.png) 0px -60px;
   image-rendering: pixelated;
   animation: babySleep 3s steps(2) infinite;
   zoom: 5;
@@ -128,7 +128,7 @@ button {
 .monster, .baby-no {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px -100px;
+  background: url(/assets/images/digimon-sprites.png) 0px -100px;
   image-rendering: pixelated;
   animation: babyNo 3s steps(2) infinite;
   zoom: 5;
@@ -143,7 +143,7 @@ button {
 .monster , .baby-happy{
   width: 16px;
   height: 16px;
-  background: url(../../digimon-sprites.png) 0px -120px;
+  background: url(/assets/images/digimon-sprites.png) 0px -120px;
   image-rendering: pixelated;
   animation: babyHappy 3s steps(2) infinite;
   zoom: 5;
@@ -158,7 +158,7 @@ button {
 .monster, .baby-mad {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px -160px;
+  background: url(/assets/images/digimon-sprites.png) 0px -160px;
   image-rendering: pixelated;
   animation: babyMad 3s steps(2) infinite;
   zoom: 5;
@@ -173,7 +173,7 @@ button {
 .monster, .baby-battle{
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px -200px;
+  background: url(/assets/images/digimon-sprites.png) 0px -200px;
 /*  transform: scalex(-1) flips image;
 */  image-rendering: pixelated;
   animation: babyBattle 3s steps(2) infinite;
@@ -189,7 +189,7 @@ button {
 .monster, .baby-eat {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px -240px;
+  background: url(/assets/images/digimon-sprites.png) 0px -240px;
   image-rendering: pixelated;
   animation: babyEat 3s steps(2) infinite;
   zoom: 5;
@@ -204,7 +204,7 @@ button {
 .monster, .baby-injured {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) 0px -280px;
+  background: url(/assets/images/digimon-sprites.png) 0px -280px;
   image-rendering: pixelated;
   animation: babyInjured 3s steps(2) infinite;
   zoom: 5;
@@ -218,7 +218,7 @@ button {
 .monster, .junior-walk {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px 0px;
+  background: url(/assets/images/digimon-sprites.png) -20px 0px;
   image-rendering: pixelated;
   animation: juniorWalk 3s steps(3) infinite;
   zoom: 5;
@@ -232,7 +232,7 @@ button {
 .monster, .junior-sleep {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px -60px;
+  background: url(/assets/images/digimon-sprites.png) -20px -60px;
   image-rendering: pixelated;
   animation: juniorSleep 3s steps(2) infinite;
   zoom: 5;
@@ -247,7 +247,7 @@ button {
 .monster, .junior-no{
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px -100px;
+  background: url(/assets/images/digimon-sprites.png) -20px -100px;
   image-rendering: pixelated;
   animation: juniorNo 3s steps(2) infinite;
   zoom: 5;
@@ -262,7 +262,7 @@ button {
 .monster, .junior-happy {
   width: 16px;
   height: 16px;
-  background: url(../../digimon-sprites.png) -20px -120px;
+  background: url(/assets/images/digimon-sprites.png) -20px -120px;
   image-rendering: pixelated;
   animation: juniorHappy 3s steps(2) infinite;
   zoom: 5;
@@ -277,7 +277,7 @@ button {
 .monster, .junior-mad {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px -160px;
+  background: url(/assets/images/digimon-sprites.png) -20px -160px;
   image-rendering: pixelated;
   animation: juniorMad 3s steps(2) infinite;
   zoom: 5;
@@ -292,7 +292,7 @@ button {
 .monster, .junior-battle {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px -200px;
+  background: url(/assets/images/digimon-sprites.png) -20px -200px;
   image-rendering: pixelated;
   animation: juniorBattle 3s steps(2) infinite;
   zoom: 5;
@@ -307,7 +307,7 @@ button {
 .monster, .junior-eat{
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px -240px;
+  background: url(/assets/images/digimon-sprites.png) -20px -240px;
   image-rendering: pixelated;
   animation: juniorEat 3s steps(2) infinite;
   zoom: 5;
@@ -322,7 +322,7 @@ button {
 .monster, .junior-injured{
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -20px -280px;
+  background: url(/assets/images/digimon-sprites.png) -20px -280px;
   image-rendering: pixelated;
   animation: juniorInjured 3s steps(2) infinite;
   zoom: 5;
@@ -337,7 +337,7 @@ button {
 .monster, .monzaemon-walk {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px 0px;
+  background: url(/assets/images/digimon-sprites.png) -260px 0px;
   image-rendering: pixelated;
   animation: monzaemonWalk 3s steps(3) infinite alternate-reverse;
   zoom:5;
@@ -351,7 +351,7 @@ button {
 .monster, .monzaemon-sleep {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px -60px;
+  background: url(/assets/images/digimon-sprites.png) -260px -60px;
   animation: monzaemonSleep 3s steps(2) infinite;
   image-rendering: pixelated;
   zoom: 5;
@@ -365,7 +365,7 @@ button {
 .monster, .monzaemon-no {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px -100px;
+  background: url(/assets/images/digimon-sprites.png) -260px -100px;
   image-rendering: pixelated;
   animation: monzaemonNo 3s steps(2) infinite;
   zoom: 5;
@@ -380,7 +380,7 @@ button {
 .monster, .monzaemon-happy {
   width: 16px;
   height: 16px;
-  background: url(../../digimon-sprites.png) -260px -120px;
+  background: url(/assets/images/digimon-sprites.png) -260px -120px;
   image-rendering: pixelated;
   animation: monzaemonHappy 3s steps(2) infinite;
   zoom: 5;
@@ -395,7 +395,7 @@ button {
 .monster, .monzaemon-mad {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px -160px;
+  background: url(/assets/images/digimon-sprites.png) -260px -160px;
   image-rendering: pixelated;
   animation: monzaemonMad 3s steps(2) infinite;
   zoom: 5;
@@ -410,7 +410,7 @@ button {
 .monster, .monzaemon-battle {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px -200px;
+  background: url(/assets/images/digimon-sprites.png) -260px -200px;
   image-rendering: pixelated;
   animation: monzaemonBattle 3s steps(2) infinite;
   zoom: 5;
@@ -425,7 +425,7 @@ button {
 .monster, .monzaemon-battle-mid {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px -240px;
+  background: url(/assets/images/digimon-sprites.png) -260px -240px;
   image-rendering: pixelated;
   animation: monzaemonEat 3s steps(2) infinite;
   zoom: 5;
@@ -440,7 +440,7 @@ button {
 .monzaemon-injured {
   width: 16px;
   height: 16px;
-  background: url(../digimon-sprites.png) -260px -280px;
+  background: url(/assets/images/digimon-sprites.png) -260px -280px;
   image-rendering: pixelated;
   animation: monzaemonInjured 3s steps(2) infinite;
   zoom: 5;

@@ -6,9 +6,9 @@
     .module('myApp')
     .controller('UserController', UserController);
 
-  UserController.$inject = ['$http', '$interval'];
+  UserController.$inject = ['$http', '$interval', '$window'];
 
-  function UserController($http, $interval){
+  function UserController($http, $interval, $window){
     var vm = this;
     vm.nameo = "agumon"
     vm.info = {}
@@ -23,17 +23,13 @@
     vm.lights = lights;
     vm.asleep = false;
 
-    function callAtInterval() {
-
-      console.log("Interval occurred");
-    }
-
     function newMonster (){
       $http
       .post('/user/new', vm.info)
       .then(function(res) {
        console.log('new monster created, response: ', res)
        // document.body.innerHTML = res.data;
+       $window.location='/user';
       }, function(err) {
         console.log(err);
       });
@@ -89,7 +85,7 @@
           monster.style.background = "url(/assets/images/digimon-sprites.png) -20px -240px"
           monster.style.animation = 'juniorEat 1s steps(2) 3'
         } else {
-          monster.style.background = "url(../digimon-sprites.png) 0px -240px"
+          monster.style.background = "url(/assets/images/digimon-sprites.png) 0px -240px"
           monster.style.animation = 'babyEat 1s steps(2) 3'
         }
         $('#play-food').text('🍖')
@@ -218,9 +214,9 @@
       renderStrength();
       renderPoop();
 
-      if (vm.info.vpets.species === "monzaemon") monzaemonDefault();
-      else if (vm.info.vpets.species === "koromon") juniorDefault();
-      else babyDefault();
+      if (vm.info.vpets.species === "monzaemon") resetDefault(monzaemonWalk() );
+      else if (vm.info.vpets.species === "koromon") resetDefault(juniorWalk() );
+      else resetDefault(babyWalk() );
       if (vm.info.vpets.stats.hunger > 4) hungry = false;
       if (vm.info.vpets.stats.strength > 4) pumped = false;
       }, function(err) {
@@ -229,33 +225,11 @@
     }
 
 //=======DEFAULT ANIMATIONS========
-      function babyDefault() {
-        setTimeout(function(){
-          console.log('we back to walking')
-          monster.style.background = "url(../digimon-sprites.png) 0px 0px";
-          monster.style.animation = `babyWalk 3s steps(3) infinite`
-          $('#play-food').text('')
-          $('#play-strength').text('')
-          monster.textContent = ""
-        }, 3000);
-      }
 
-      function juniorDefault() {
+      function resetDefault(callback) {
         setTimeout(function(){
-          console.log('we back to walking')
-          monster.style.background = "url(../digimon-sprites.png) -20px 0px";
-          monster.style.animation = `juniorWalk 3s steps(3) infinite`
-          $('#play-food').text('')
-          $('#play-strength').text('')
-          monster.textContent = ""
-        }, 3000);
-      }
-
-      function monzaemonDefault() {
-        setTimeout(function(){
-          console.log('we back to walking')
-          monster.style.background = "url(../digimon-sprites.png) -260px 0px";
-          monster.style.animation = `monzaemonWalk 3s steps(3) infinite`
+          console.log('back to zero')
+          callback;
           $('#play-food').text('')
           $('#play-strength').text('')
           monster.textContent = ""
@@ -263,9 +237,37 @@
       }
 
 //RUNS ON LOAD
-    getStats();
-    // $interval(reduceStrength, 60000);
-    // $interval(reduceFood, 30000);
+  var monster = document.querySelector('#monster');
+  function defaultMonster(){
+    monster.style.height = "16px";
+    monster.style.width = "16px";
+    monster.style.imageRendering = "pixelated";
+    monster.style.zoom = "5";
+  }
+  function babyWalk (){
+    defaultMonster();
+    monster.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
+    monster.style.animation = `babyWalk 3s steps(3) infinite`
+  }
+
+  function juniorWalk (){
+  defaultMonster();
+  monster.style.background = "url(/assets/images/digimon-sprites.png) -20px 0px";
+  monster.style.animation = `juniorWalk 3s steps(3) infinite`
+}
+
+ function monzaemonWalk (){
+  defaultMonster();
+  monster.style.background = "url(/assets/images/digimon-sprites.png) -260px 0px";
+  monster.style.animation = `monzaemonWalk 3s steps(3) infinite`
+}
+
+
+  // babyWalk(monster);
+
+  getStats();
+  $interval(reduceStrength, 120000);
+  $interval(reduceFood, 60000);
 
     function stopInterval(promise) {
       console.log('stopping time', promise)
