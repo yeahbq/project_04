@@ -21,6 +21,7 @@
     vm.stopInterval = stopInterval;
     vm.useToilet = useToilet;
     vm.lights = lights;
+    vm.asleep = false;
 
     function callAtInterval() {
 
@@ -73,11 +74,32 @@
       });
     }
 
+    var hungry = true;
     function addFood(){
+      if(!hungry) {
+        monster.textContent = "😣"
+        console.log("NOT HUNGRY STOP IT!")
+      }
+      else{
+        if (vm.info.vpets.species === "monzaemon") {
+          monster.style.background = "url(/assets/images/digimon-sprites.png) -260px -120px"
+          monster.style.animation = 'monzaemonHappy 1s steps(2) 3'
+        }
+        else if (vm.info.vpets.species === "koromon") {
+          monster.style.background = "url(/assets/images/digimon-sprites.png) -20px -240px"
+          monster.style.animation = 'juniorEat 1s steps(2) 3'
+        } else {
+          monster.style.background = "url(../digimon-sprites.png) 0px -240px"
+          monster.style.animation = 'babyEat 1s steps(2) 3'
+        }
+        $('#play-food').text('🍖')
+      }
+
       $http
       .put('/action?action=feed', {times: 1})
       .then(function(res) {
-        console.log('put request to feed digimon')
+        console.log('feeding and response', res)
+        if(res.status === 201) hungry = false;
         getStats();
       }, function(err) {
         console.log(err);
@@ -108,11 +130,31 @@
       $('#poop').text(txt)
     }
 
+    var pumped = true;
     function addStrength(){
+      if(!pumped) {
+        monster.textContent = "😣"
+        console.log('he is too weak to workout')
+      } else{
+        if (vm.info.vpets.species === "monzaemon") {
+          monster.style.background = "url(/assets/images/digimon-sprites.png) -260px -120px"
+          monster.style.animation = 'monzaemonHappy 1s steps(2) 3'
+        }
+        else if (vm.info.vpets.species === "koromon") {
+          monster.style.background = "url(/assets/images/digimon-sprites.png) -20px -120px"
+          monster.style.animation = 'juniorHappy 1s steps(2) 3'
+        } else{
+          monster.style.background = "url(/assets/images/digimon-sprites.png) 0px -120px";
+          monster.style.animation = `babyHappy 1s steps(2) 3`
+        }
+        $('#play-strength').text('🥊')
+      }
+
       $http
       .put('/action?action=strength', {times: 1})
       .then(function(res) {
-       console.log('put request to add strength digimon')
+       console.log('gain powah and res', res)
+       if(res.status === 201) pumped = false;
        getStats();
       }, function(err) {
         console.log(err);
@@ -142,8 +184,26 @@
     }
 
     function lights(evt){
+      vm.asleep = !vm.asleep;
       var play = document.querySelector('#playSpace');
       play.classList.toggle('night');
+
+      if (vm.asleep){
+        console.log('time for bed zZz')
+        if(vm.info.vpets.species === "monzaemon"){
+          monster.style.background ="url(/assets/images/digimon-sprites.png) -260px -60px"
+          monster.style.animation = "monzaemonSleep 3s steps(2) infinite"
+        }
+        else if (vm.info.vpets.species === "koromon"){
+          monster.style.background ="url(/assets/images/digimon-sprites.png) -20px -60px"
+          monster.style.animation = "koromonSleep 3s steps(2) infinite"
+        }
+        else {
+          monster.style.background ="url(/assets/images/digimon-sprites.png) 0px -60px"
+          monster.style.animation = "babySleep 3s steps(2) infinite"
+        }
+      }
+      else getStats();
     }
 
     function getStats() {
@@ -157,18 +217,61 @@
       renderFood();
       renderStrength();
       renderPoop();
+
+      if (vm.info.vpets.species === "monzaemon") monzaemonDefault();
+      else if (vm.info.vpets.species === "koromon") juniorDefault();
+      else babyDefault();
+      if (vm.info.vpets.stats.hunger > 4) hungry = false;
+      if (vm.info.vpets.stats.strength > 4) pumped = false;
       }, function(err) {
         console.log(err);
       })
     }
+
+//=======DEFAULT ANIMATIONS========
+      function babyDefault() {
+        setTimeout(function(){
+          console.log('we back to walking')
+          monster.style.background = "url(../digimon-sprites.png) 0px 0px";
+          monster.style.animation = `babyWalk 3s steps(3) infinite`
+          $('#play-food').text('')
+          $('#play-strength').text('')
+          monster.textContent = ""
+        }, 3000);
+      }
+
+      function juniorDefault() {
+        setTimeout(function(){
+          console.log('we back to walking')
+          monster.style.background = "url(../digimon-sprites.png) -20px 0px";
+          monster.style.animation = `juniorWalk 3s steps(3) infinite`
+          $('#play-food').text('')
+          $('#play-strength').text('')
+          monster.textContent = ""
+        }, 3000);
+      }
+
+      function monzaemonDefault() {
+        setTimeout(function(){
+          console.log('we back to walking')
+          monster.style.background = "url(../digimon-sprites.png) -260px 0px";
+          monster.style.animation = `monzaemonWalk 3s steps(3) infinite`
+          $('#play-food').text('')
+          $('#play-strength').text('')
+          monster.textContent = ""
+        }, 3000);
+      }
+
+//RUNS ON LOAD
     getStats();
-    $interval(reduceStrength, 10000);
+    // $interval(reduceStrength, 60000);
+    // $interval(reduceFood, 30000);
 
     function stopInterval(promise) {
       console.log('stopping time', promise)
       return $interval.cancel(promise);
     }
-
+//END OF CONTROLLER
   }
 })();
 

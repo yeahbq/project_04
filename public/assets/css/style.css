@@ -26,11 +26,11 @@ button {
   list-style-type: none;
 }
 
-#logout {
+/*#logout {
   position: absolute;
   bottom: 10%;
   left: 48%
-;}
+;}*/
 
 #login-btn {
   position: absolute;
@@ -51,11 +51,12 @@ button {
 }
 
 #playSpace {
+  border: 10px dotted pink;
   position: absolute;
   height: 400px;
   width: 400px;
   background: url('/assets/images/grass.jpg');
-  background-size: 500px;
+  background-size: 400px 400px;
   background-repeat: no-repeat;
   margin: 20px;
 
@@ -63,11 +64,15 @@ button {
 
 .night {
   background: url('/assets/images/night.jpg')!important;
-  background-size: 500px!important;
+  background-size: 400px 400px!important;
   background-repeat: no-repeat!important;
 }
 
 #display-stats{
+  margin: 20px;
+}
+
+#action-buttons{
   margin: 20px;
 }
 
@@ -82,7 +87,7 @@ button {
   position: absolute;
   display: inline-block;
   left: 40%;
-  bottom: 30%;
+  bottom: 10%;
 }
 
 .flipped {
@@ -347,8 +352,8 @@ button {
   width: 16px;
   height: 16px;
   background: url(../digimon-sprites.png) -260px -60px;
-  image-rendering: pixelated;
   animation: monzaemonSleep 3s steps(2) infinite;
+  image-rendering: pixelated;
   zoom: 5;
 }
 

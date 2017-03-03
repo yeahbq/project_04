@@ -51,6 +51,32 @@ router.put('/', (req, res, next) => {
       else console.log(results)
     })
 
+    if(req.session.user.vpets.stats.weight > 20) {
+      User.update({google_id: req.session.user.id},
+      {$set:
+        {
+          "vpets.0.species": "monzaemon",
+        }
+      },
+      function(err, results) {
+        if (err) console.log(err);
+        else console.log(results)
+      })
+    }
+
+    else if(req.session.user.vpets.stats.weight > 10) {
+      User.update({google_id: req.session.user.id},
+      {$set:
+        {
+          "vpets.0.species": "koromon",
+        }
+      },
+      function(err, results) {
+        if (err) console.log(err);
+        else console.log(results)
+      })
+    }
+
     console.log('ate food', hunger)
     res.send(200)
     } else {

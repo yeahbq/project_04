@@ -27,31 +27,31 @@ walk_animation = loadAnimation(player_sprite_sheet);
 
 }
 
-function setup() {
-  var canvas = createCanvas(400, 400);
-  canvas.parent('middle')
-  stroke(255, 0, 255);     // Set line drawing color to white
-  frameRate(3);
-  // createSprite(200, 100, 50, 50);
-  bg = loadImage("/assets/images/grass.jpg")
-  night = loadImage("/assets/images/night.jpg")
-}
-var y = 100;
+// function setup() {
+//   var canvas = createCanvas(400, 400);
+//   canvas.parent('middle')
+//   stroke(255, 0, 255);     // Set line drawing color to white
+//   frameRate(3);
+//   // createSprite(200, 100, 50, 50);
+//   bg = loadImage("/assets/images/grass.jpg")
+//   night = loadImage("/assets/images/night.jpg")
+// }
+// var y = 100;
 
-function draw() {
-  clear();
+// function draw() {
+//   clear();
 
 
-   y = y - 1;
-  if (y < 0) {
-    y = height;
-  }
-  // background(night);
-  background(bg);
-  drawSprites();
-  line(0, y, width, y);
-  animation(walk_animation, 220, 300);
-}
+//    y = y - 1;
+//   if (y < 0) {
+//     y = height;
+//   }
+//   // background(night);
+//   background(bg);
+//   drawSprites();
+//   line(0, y, width, y);
+//   animation(walk_animation, 220, 300);
+// }
 
 
 
@@ -105,15 +105,15 @@ let defaultMonster = (element) => {
 
 //element refers to div name to target
 //aniName refers to @keyFrame name to match css
-let flip = () => {
-  return setInterval(function () {
+// let flip = () => {
+//   return setInterval(function () {
 
-    monster.classList.toggle('flipped')
-    // teddy.classList.toggle('flipped')
-  }, 3000)
-}
+//     monster.classList.toggle('flipped')
+//     // teddy.classList.toggle('flipped')
+//   }, 3000)
+// }
 
-var flipId = flip();
+// var flipId = flip();
 
 
 let checkAge = () => {
@@ -183,7 +183,7 @@ let babySleep = (element) => {
 let babyNo = (element) => {
   myStopFunction();
   element.style.background = "url(../digimon-sprites.png) 0px -100px";
-  element.style.animation = `babyNo`
+  element.style.animation = `babyNo 2`
   // sayNo();
   // babyWalk(monster);
 }

@@ -1,21 +1,26 @@
 <section ng-controller="UserController as user">
 
 
-<div id="right">
-  <form ng-submit='user.addFood()'><button type="submit">Feed</button></form>
-  <form ng-submit='user.addStrength()'><button type="submit">Train</button></form>
-  <button id="toilet" ng-click="user.useToilet()">Toilet</button>
-  <button ng-click="user.lights()" id="lights">Lights</button>
-  <div id="deletable">
-  <button id="delete-btn">DELETE</button>
-  </div>
-    <form ng-submit='user.updateNickname()'>
-      <input type="text" placeholder="edit monster name" ng-model='user.info.vpets.nickname'>
-      <button type="submit">submit name</button></form>
-  <div id="nickname-msg"></div>
-  <div id="greet-monster">Say hello to {{vpets.nickname}}</div>
-</div>
+<section id="action-buttons">
 
+  <div id="right">
+    <div id="greet-monster"><h3>Say hello to {{vpets.nickname}}</h3></div>
+    <form ng-submit='user.addFood()'><button type="submit">Feed</button></form>
+    <form ng-submit='user.addStrength()'><button type="submit">Train</button></form>
+    <button id="toilet" ng-click="user.useToilet()">Toilet</button>
+    <button ng-click="user.lights()" id="lights">Lights</button>
+    <div id="deletable">
+    <button id="delete-btn">DELETE</button>
+    </div>
+      <form ng-submit='user.updateNickname()'>
+        <input type="text" placeholder="edit monster name" ng-model='user.info.vpets.nickname'>
+        <button type="submit">submit name</button></form>
+    <div id="nickname-msg"></div>
+    <a id="logout" href="/auth/logout">Logout</a>
+
+  </div>
+
+</section>
 
 </section>
 <br><br><br>
@@ -26,12 +31,15 @@
 </section>
 
 
-<a id="logout" href="/auth/logout">Logout</a>
 
 <div id="playSpace">
   <div id="left">
-    <div id="monster"></div>
+    <div id="monster">
+
+    </div>
     <div id="poop"></div>
+    <div id="play-strength"></div>
+    <div id="play-food"></div>
   </div>
 </div>
 
