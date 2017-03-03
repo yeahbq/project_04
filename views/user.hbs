@@ -25,7 +25,7 @@
       <form ng-submit='user.deleteMonster()'><button class="red btn" type="submit">Delete<i class="small material-icons right"> delete</i></button></form>
       <form ng-submit='user.updateNickname()'>
       <div class="input-field">
-        <input id="edit-name" type="text" ng-model='user.info.vpets.nickname'>
+        <input class="active" id="edit-name" type="text" ng-model='user.info.vpets.nickname'>
         <label for="edit-name">Edit Name</label>
         <button class="grey btn" type="submit"><i class="small material-icons right">edit</i>submit</button></form>
       </div>
@@ -34,18 +34,12 @@
 
     </div>
 
-
   </section>
   <br><br><br>
-
-
-
-
 
 </div>
 <script src="/app.js" charset="utf-8"></script>
 <script src="/controllers/userController.js" charset="utf-8"></script>
-<script src="/js/monster.js"></script>
 
 
 
