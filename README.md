@@ -40,24 +40,24 @@ and care is put in!
 [Wire Frames](https://github.com/yeahbq/project_04-vpets-/blob/master/vpests-wireframes.JPG)
 
 ###Technologies Used
-*Angular 1.5
-*Body-Parser
-*CSS3
-*Dot-ENV
-*ES6
-*Express
-*Express-Session
-*.git / GitHub
-*Google+ Oauth
-*Handlebars Templating
-*Heroku Online Deployment
-*j5.js / j5.play
-*JavaScript
-*Method-Override
-*MongoDB / Mongoose
-*Node.js
-*Path
-*Request
+* Angular 1.5
+* Body-Parser
+* CSS3
+* Dot-ENV
+* ES6
+* Express
+* Express-Session
+* .git / GitHub
+* Google+ Oauth
+* Handlebars Templating
+* Heroku Online Deployment
+* j5.js / j5.play
+* JavaScript
+* Method-Override
+* MongoDB / Mongoose
+* Node.js
+* Path
+* Request
 
 ###General Approach
 For this project sprint, I closely followed Agile Deployment methods
