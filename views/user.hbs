@@ -1,48 +1,48 @@
-<section ng-controller="UserController as user">
+<div class="container row">
 
+  <section ng-controller="UserController as user">
 
-<section id="action-buttons">
-
-  <div id="right">
-    <div id="greet-monster"><h3>Say hello to {{vpets.nickname}}</h3></div>
-    <form ng-submit='user.addFood()'><button type="submit">Feed</button></form>
-    <form ng-submit='user.addStrength()'><button type="submit">Train</button></form>
-    <button id="toilet" ng-click="user.useToilet()">Toilet</button>
-    <button ng-click="user.lights()" id="lights">Lights</button>
-    <div id="deletable">
-    <button id="delete-btn">DELETE</button>
+    <div class="col 4" id="display-stats">
+      FOOD:<div id="stats-food"></div>
+      STRENGTH:<div id="stats-protein"></div>
     </div>
+
+    <div class="col s4" id="playSpace">
+      <div class="row" id="play-frame">
+        <div class="col s6 offset-s12" id="monster"></div>
+        <div class="col s6 offset-s8" id="poop"></div>
+        <div class="col s6 offset-s11" id="play-strength"></div>
+        <div class="col s6 offset-s11" id="play-food"></div>
+      </div>
+    </div>
+
+    <div id="action-buttons"class="col s4">
+      <div id="greet-monster"><h3>Say hello to {{vpets.nickname}}</h3></div>
+      <form ng-submit='user.addFood()'><button class="blue btn" type="submit">Feed</button></form>
+      <form ng-submit='user.addStrength()'><button class="deep-orange btn"type="submit">Train</button></form>
+      <button class="brown btn" id="toilet" ng-click="user.useToilet()">Toilet</button><br>
+      <button class="btn" ng-click="user.lights()" id="lights"><i class="small material-icons right">snooze</i> lights</button>
+      <form ng-submit='user.deleteMonster()'><button class="red btn" type="submit">Delete<i class="small material-icons right"> delete</i></button></form>
       <form ng-submit='user.updateNickname()'>
-        <input type="text" placeholder="edit monster name" ng-model='user.info.vpets.nickname'>
-        <button type="submit">submit name</button></form>
-    <div id="nickname-msg"></div>
-    <a id="logout" href="/auth/logout">Logout</a>
-
-  </div>
-
-</section>
-
-</section>
-<br><br><br>
-
-<section id="display-stats">
-  FOOD:<div id="stats-food"></div>
-  STRENGTH:<div id="stats-protein"></div>
-</section>
-
-
-
-<div id="playSpace">
-  <div id="left">
-    <div id="monster">
+      <div class="input-field">
+        <input id="edit-name" type="text" ng-model='user.info.vpets.nickname'>
+        <label for="edit-name">Edit Name</label>
+        <button class="grey btn" type="submit"><i class="small material-icons right">edit</i>submit</button></form>
+      </div>
+      <div id="nickname-msg"></div>
+      <a id="logout" href="/auth/logout">Logout</a>
 
     </div>
-    <div id="poop"></div>
-    <div id="play-strength"></div>
-    <div id="play-food"></div>
-  </div>
-</div>
 
+
+  </section>
+  <br><br><br>
+
+
+
+
+
+</div>
 <script src="/app.js" charset="utf-8"></script>
 <script src="/controllers/userController.js" charset="utf-8"></script>
 <script src="/js/monster.js"></script>

@@ -22,6 +22,7 @@
     vm.useToilet = useToilet;
     vm.lights = lights;
     vm.asleep = false;
+    vm.deleteMonster = deleteMonster;
 
     function newMonster (){
       $http
@@ -57,6 +58,21 @@
       }, function(err) {
         console.log(err);
       });
+    }
+
+    function deleteMonster(){
+      $http
+      .delete('/user', vm.info)
+      .then(function(res) {
+      var html = `<div class="mainframe">
+      <img id="sprites" src="assets/images/mainframe.png" alt="mainframe"> <br><br>
+      Your monster has returned back to the mainframe<br>
+      <a href="/user">Find another pest</a> <br><br>
+      </div>
+      `
+      $("#playSpace").html(html)
+      console.log('RESULT FROM DERETE', res)
+      })
     }
 
     function reduceFood(){
