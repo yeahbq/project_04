@@ -101,7 +101,7 @@
       }
       else{
         if (vm.info.vpets.species === "monzaemon") {
-          monster.style.background = "url(/assets/images/digimon-sprites.png) -260px -120px"
+          monster.style.background = "url(/assets/images/digimon-sprites.png) -260px -240px"
           monster.style.animation = 'monzaemonEat 1s steps(2) 3'
         }
         else if (vm.info.vpets.species === "koromon") {
