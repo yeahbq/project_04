@@ -1,5 +1,7 @@
 #Project 4: VPESTS - A Virtual Pet Simulator! (created by Barrett Quan)
 
+![](https://github.com/yeahbq/project_04-vpets-/blob/master/Screen%20Shot%202017-03-03%20at%2010.40.05%20AM.png)
+
 
 ##Getting Started
 
