@@ -23,9 +23,9 @@
       <button class="teal accent-3 btn" id="toilet" ng-click="user.useToilet()">Toilet</button><br>
       <button class="teal accent-4 btn" ng-click="user.lights()" id="lights"><i class="small material-icons right">snooze</i> lights</button>
       <form ng-submit='user.deleteMonster()'><button class="red btn" type="submit">Delete<i class="small material-icons right"> delete</i></button></form>
-      <form ng-submit='user.updateNickname()'>
+      <form ng-submit='user.updateNickname(user.editName)'>
       <div class="input-field">
-        <input class="active" id="edit-name" type="text" ng-model='user.info.vpets.nickname'>
+        <input class="active" id="edit-name" type="text" ng-model='user.editName'>
         <label for="edit-name">Edit Name</label>
         <button class="grey btn" type="submit"><i class="small material-icons right">edit</i>submit</button></form>
       </div>

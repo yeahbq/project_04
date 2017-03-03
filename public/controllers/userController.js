@@ -11,6 +11,7 @@
   function UserController($http, $interval, $window){
     var vm = this;
     vm.info = {}
+    vm.editName;
     vm.updateNickname = updateNickname;
     vm.newMonster = newMonster;
     vm.addStrength = addStrength;
@@ -37,7 +38,8 @@
     }
 
 
-    function updateNickname(){
+    function updateNickname(name){
+      vm.info.vpets.nickname = name;
       $http
       .put('/user/', vm.info)
       .then(function(res) {
