@@ -1,23 +1,20 @@
 var mongoose = require('./database');
 
-// var President = require('../models/president');
+var User = require('../models/user');
 
-// var presidents = [
-//   {"name": "Blorp Florp McRichards", "start": 1789, "end": 1790},
-//   {"name": "John MuscleBrain Adams", "start": 1790, "end": 1801},
-//   {"name": "Blogpost Dorgabn", "start": 1801, "end": 1949},
-//   {"name": "Mike", "start": 1949, "end": 1947}
-// ];
+var user = [
+{"name":"Barrett Quan","google_id":"101859305566468610956","__v":0,"vpets":[{"species":"monzaemon","nickname":"THIS IS A TEST","birthday":"2017-03-03T00:31:31.448Z","_id":"58b8b9634dac4a588ea2c5b8","stats":{"age":0,"weight":31,"hunger":5,"strength":5,"energy":0,"caremistake":0,"experience":0,"poop":0}}]}
+];
 
-// President.remove({}, function(err) {
-//   if (err) console.log(err);
-//   President.create(presidents, function(err, presidents) {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log("Database seeded with " + presidents.length  + " presidents.");
-//       mongoose.connection.close();
-//     }
-//     process.exit();
-//   });
-// });
+User.remove({}, function(err) {
+  if (err) console.log(err);
+  User.create(user, function(err, user) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Database seeded with " + user.length  + " user.");
+      mongoose.connection.close();
+    }
+    process.exit();
+  });
+});
