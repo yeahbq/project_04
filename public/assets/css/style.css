@@ -9,7 +9,9 @@
   padding: 5px;
 }
 
-
+body {
+  font-family: 'VT323', monospace;
+}
 
 button {
   display: block;
