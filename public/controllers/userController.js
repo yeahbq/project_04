@@ -227,24 +227,25 @@
 
 //=======DEFAULT ANIMATIONS========
 
-      function resetDefault(callback) {
-        setTimeout(function(){
-          console.log('resetting animations and food')
-          callback;
-          $('#play-food').text('')
-          $('#play-strength').text('')
-          monster.textContent = ""
-        }, 3000);
-      }
-
-//RUNS ON LOAD
     var monster = document.querySelector('#monster');
+
+    function resetDefault(callback) {
+      setTimeout(function(){
+        console.log('resetting animations and food')
+        callback;
+        $('#play-food').text('')
+        $('#play-strength').text('')
+        monster.textContent = ""
+      }, 3000);
+    }
+
     function defaultMonster(){
       monster.style.height = "16px";
       monster.style.width = "16px";
       monster.style.imageRendering = "pixelated";
       monster.style.zoom = "5";
     }
+
     function babyWalk (){
       defaultMonster();
       monster.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
@@ -255,13 +256,15 @@
     defaultMonster();
     monster.style.background = "url(/assets/images/digimon-sprites.png) -20px 0px";
     monster.style.animation = `juniorWalk 3s steps(3) infinite`
-  }
+    }
 
    function monzaemonWalk (){
     defaultMonster();
     monster.style.background = "url(/assets/images/digimon-sprites.png) -260px 0px";
     monster.style.animation = `monzaemonWalk 3s steps(3) infinite`
-  }
+    }
+
+//RUNS ON LOAD
 
     getStats();
     $interval(reduceStrength, 45000);
