@@ -6,9 +6,9 @@
     .module('myApp')
     .controller('UserController', UserController);
 
-  UserController.$inject = ['$http', '$interval', '$window'];
+  UserController.$inject = ['$http', '$interval', '$window', '$timeout'];
 
-  function UserController($http, $interval, $window){
+  function UserController($http, $interval, $window, $timeout){
     var vm = this;
     vm.info = {}
     vm.editName;
@@ -118,7 +118,7 @@
       .put('/action?action=feed', {times: 1})
       .then(function(res) {
         if(res.status === 201) vm.hungry = false;
-        getStats();
+        else getStats();
       }, function(err) {
         console.log(err);
       });
@@ -146,7 +146,7 @@
       .put('/action?action=strength', {times: 1})
       .then(function(res) {
        if(res.status === 201) vm.pumped = false;
-       getStats();
+       else getStats();
       }, function(err) {
         console.log(err);
       });
@@ -232,7 +232,7 @@
     var monster = document.querySelector('#monster');
 
     function resetDefault(callback) {
-      setTimeout(function(){
+      $timeout(function(){
         console.log('resetting animations and food')
         callback;
         $('#play-food').text('')
@@ -250,6 +250,7 @@
 
     function babyWalk (){
       defaultMonster();
+      console.log('going back to walk')
       monster.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
       monster.style.animation = `babyWalk 3s steps(3) infinite`
     }
