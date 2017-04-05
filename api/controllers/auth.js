@@ -26,7 +26,7 @@ router.get('/callback', (req, res, next) => {
   request.post(url, {form}, (err, resp, body) => {
     const data = JSON.parse(body);
     req.session.access_token = data.access_token;
-    console.log('logged in to google')
+    // console.log('logged in to google')
     res.redirect('/profile/me');
   });
 });

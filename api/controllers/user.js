@@ -10,11 +10,9 @@ const user = req.session.user;
   User.find({google_id: req.session.user.id}, function (err, results) {
   if (err) return console.error('error here', err);
   data = results;
-    console.log('data[0]', data[0])
-    if (data[0] === undefined) return console.log('no data for this user')
+    if (data[0] === undefined) return;
     else {
       req.session.user.vpets = results[0].vpets[0]
-      // console.log('WRECK MEEEEE req.session.user.vpets', req.session.user.vpets)
       newUserFlag = false;
     }
   }).then(function(){
@@ -64,8 +62,6 @@ function newMonster (req, res) {
       }
     })
   acct.save();
-  console.log('vpet created! *! *!', acct)
-  // res.render('user', {vpets: req.session.user.vpets})
   res.redirect('/user')
 }
 

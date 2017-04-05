@@ -25,7 +25,7 @@ router.put('/', (req, res, next) => {
         if (err) console.log(err);
         else console.log(results)
       })
-    console.log('ate protein', strength)
+    // console.log('ate protein', strength)
     res.send(200)
     } else {
       res.send(201)

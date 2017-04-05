@@ -188,7 +188,6 @@
       play.classList.toggle('night');
 
       if (vm.asleep){
-        console.log('time for bed zZz')
         if(vm.info.vpets.species === "monzaemon"){
           monster.style.background ="url(/assets/images/digimon-sprites.png) -260px -60px"
           monster.style.animation = "monzaemonSleep 3s steps(2) infinite"
@@ -210,7 +209,7 @@
       $http
       .get('/api/user')
       .then(function(res) {
-      if(!res.data[0]) return console.log('no vpet info')
+      if(!res.data[0]) return
       vm.info.vpets = res.data[0].vpets[0]
 
       renderFood();
@@ -233,7 +232,7 @@
 
     function resetDefault(callback) {
       $timeout(function(){
-        console.log('resetting animations and food')
+        // console.log('resetting animations and food')
         callback;
         $('#play-food').text('')
         $('#play-strength').text('')
@@ -250,7 +249,7 @@
 
     function babyWalk (){
       defaultMonster();
-      console.log('going back to walk')
+      // console.log('going back to walk')
       monster.style.background = "url(/assets/images/digimon-sprites.png) 0px 0px";
       monster.style.animation = `babyWalk 3s steps(3) infinite`
     }

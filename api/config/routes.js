@@ -24,7 +24,7 @@ router.route('/api/user')
   let data = {}
   User.find({google_id: req.session.user.id}, function (err, results) {
   if (err) return console.error(err);
-  console.log(results);
+  // console.log(results);
   data = results;
   res.json(results)
   })
@@ -45,7 +45,7 @@ router.route('/user/new')
   //run findOneAndUpdate
   var user = req.session.user;
   if (!user) return res.redirect('/');
-  console.log('req.session:', req.session)
+  // console.log('req.session:', req.session)
   res.render('new')
 })
 
