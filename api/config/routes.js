@@ -45,7 +45,7 @@ router.route('/user/new')
   //run findOneAndUpdate
   var user = req.session.user;
   if (!user) return res.redirect('/');
-  console.log('tears reQ.Q.session:', req.session)
+  console.log('req.session:', req.session)
   res.render('new')
 })
 

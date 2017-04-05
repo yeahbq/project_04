@@ -77,7 +77,7 @@ router.put('/', (req, res, next) => {
       })
     }
 
-    console.log('ate food', hunger)
+    // console.log('ate food', hunger)
     res.send(200)
     } else {
       res.send(201)
@@ -97,7 +97,7 @@ router.put('/', (req, res, next) => {
       if (err) console.log(err);
       else console.log(results)
     })
-    console.log('hunger decreased', hunger)
+    // console.log('hunger decreased', hunger)
     res.send(200)
     } else {
       req.session.user.vpets.stats.caremistake++;
@@ -111,7 +111,7 @@ router.put('/', (req, res, next) => {
         if (err) console.log(err);
         else console.log(results)
       })
-      console.log('care mistake increased', caremistake)
+      // console.log('care mistake increased', caremistake)
       res.send(200)
     }
   }
@@ -130,7 +130,7 @@ router.put('/', (req, res, next) => {
         if (err) console.log(err);
         else console.log(results)
       })
-      console.log('strength decreased', strength)
+      // console.log('strength decreased', strength)
       res.send(200)
       } else {
         req.session.user.vpets.stats.caremistake++;
@@ -144,7 +144,7 @@ router.put('/', (req, res, next) => {
           if (err) console.log(err);
           else console.log(results)
         })
-        console.log('care mistake increased', caremistake)
+        // console.log('care mistake increased', caremistake)
         res.send(200)
       }
     }
@@ -161,7 +161,7 @@ router.put('/', (req, res, next) => {
       if (err) console.log(err);
       else console.log(results)
     })
-    console.log('ate food', hunger)
+    // console.log('ate food', hunger)
     res.send(200)
   }
 })

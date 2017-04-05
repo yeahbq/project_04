@@ -14,12 +14,11 @@ const user = req.session.user;
     if (data[0] === undefined) return console.log('no data for this user')
     else {
       req.session.user.vpets = results[0].vpets[0]
-      console.log('WRECK MEEEEE req.session.user.vpets', req.session.user.vpets)
+      // console.log('WRECK MEEEEE req.session.user.vpets', req.session.user.vpets)
       newUserFlag = false;
     }
   }).then(function(){
     if (newUserFlag === true) {
-      console.log('NEWBOOFLAGWTFBBQ', newUserFlag)
       return res.redirect('/user/new')
     }
     //if a digimon object doesn't exist with this user, send them to new
